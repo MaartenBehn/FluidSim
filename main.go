@@ -26,11 +26,20 @@ func start() {
 
 	e1 := OctaForce.CreateEntity()
 	mesh := OctaForce.AddComponent(e1, OctaForce.COMPONENT_Mesh).(OctaForce.Mesh)
-	mesh = OctaForce.LoadOBJ(absPath + "/mesh/cube.obj")
+	mesh = OctaForce.LoadOBJ(absPath + "/mesh/Cube.obj")
 	OctaForce.SetComponent(e1, OctaForce.COMPONENT_Mesh, mesh)
 
 	transform := OctaForce.GetComponent(e1, OctaForce.COMPONENT_Transform).(OctaForce.Transform)
-	transform.Position = mgl32.Vec3{4, 4, 0}
+	transform.Position = mgl32.Vec3{-5, -5, -10}
+	OctaForce.SetComponent(e1, OctaForce.COMPONENT_Transform, transform)
+
+	e1 = OctaForce.CreateEntity()
+	mesh = OctaForce.AddComponent(e1, OctaForce.COMPONENT_Mesh).(OctaForce.Mesh)
+	mesh = OctaForce.LoadOBJ(absPath + "/mesh/Sphere.obj")
+	OctaForce.SetComponent(e1, OctaForce.COMPONENT_Mesh, mesh)
+
+	transform = OctaForce.GetComponent(e1, OctaForce.COMPONENT_Transform).(OctaForce.Transform)
+	transform.Position = mgl32.Vec3{5, 5, -10}
 	OctaForce.SetComponent(e1, OctaForce.COMPONENT_Transform, transform)
 }
 
