@@ -23,16 +23,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4023e5a1-d193-4623-8bca-ab0cfb3b0698" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/mesh/Cube.mtl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mesh/Cube.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../OctaForceEngineGo/Camera.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../OctaForceEngineGo/Transform.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/ComponentManager.go" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/ComponentManager.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/Main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/Main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/Mesh.go" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/Mesh.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/Window.go" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/Window.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/mesh/Cube.mtl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/mesh/Cube.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/Renderer.go" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/Renderer.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +125,9 @@
     <MESSAGE value="append Bug fix" />
     <MESSAGE value="Mesh rendering" />
     <MESSAGE value="OBJ Loader" />
-    <option name="LAST_COMMIT_MESSAGE" value="OBJ Loader" />
+    <MESSAGE value="Mesh Component system" />
+    <MESSAGE value="Cleaned Up Renderer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaned Up Renderer" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" key="#Deployment" timestamp="1599926172704">
@@ -143,71 +142,71 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="537" y="86" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599926035236" />
-    <state width="737" height="466" key="DebuggerActiveHint" timestamp="1600004844846">
+    <state width="737" height="466" key="DebuggerActiveHint" timestamp="1600023201294">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="737" height="466" key="DebuggerActiveHint/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600004844846" />
+    <state width="737" height="466" key="DebuggerActiveHint/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600023201294" />
     <state width="701" height="466" key="DebuggerActiveHint/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599774039565" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1599834449497">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599834449497" />
-    <state width="1877" height="2" key="GridCell.Tab.0.bottom" timestamp="1600005010082">
+    <state width="1877" height="213" key="GridCell.Tab.0.bottom" timestamp="1600023149186">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="2" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600005010082" />
+    <state width="1877" height="213" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600023149186" />
     <state width="1877" height="97" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599774423225" />
-    <state width="1877" height="2" key="GridCell.Tab.0.center" timestamp="1600005010082">
+    <state width="1877" height="213" key="GridCell.Tab.0.center" timestamp="1600023149186">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="2" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600005010082" />
+    <state width="1877" height="213" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600023149186" />
     <state width="1877" height="97" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599774423225" />
-    <state width="1877" height="2" key="GridCell.Tab.0.left" timestamp="1600005010082">
+    <state width="1877" height="213" key="GridCell.Tab.0.left" timestamp="1600023149186">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="2" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600005010082" />
+    <state width="1877" height="213" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600023149186" />
     <state width="1877" height="97" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599774423225" />
-    <state width="1877" height="2" key="GridCell.Tab.0.right" timestamp="1600005010082">
+    <state width="1877" height="213" key="GridCell.Tab.0.right" timestamp="1600023149186">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="2" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600005010082" />
+    <state width="1877" height="213" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600023149186" />
     <state width="1877" height="97" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599774423225" />
-    <state width="1877" height="2" key="GridCell.Tab.1.bottom" timestamp="1600005010083">
+    <state width="1877" height="213" key="GridCell.Tab.1.bottom" timestamp="1600023150569">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="2" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600005010083" />
+    <state width="1877" height="213" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600023150569" />
     <state width="1877" height="97" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599774423139" />
-    <state width="1877" height="2" key="GridCell.Tab.1.center" timestamp="1600005010083">
+    <state width="1877" height="213" key="GridCell.Tab.1.center" timestamp="1600023150569">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="2" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600005010083" />
+    <state width="1877" height="213" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600023150569" />
     <state width="1877" height="97" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599774423139" />
-    <state width="1877" height="2" key="GridCell.Tab.1.left" timestamp="1600005010083">
+    <state width="1877" height="213" key="GridCell.Tab.1.left" timestamp="1600023150569">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="2" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600005010083" />
+    <state width="1877" height="213" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600023150569" />
     <state width="1877" height="97" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599774423139" />
-    <state width="1877" height="2" key="GridCell.Tab.1.right" timestamp="1600005010083">
+    <state width="1877" height="213" key="GridCell.Tab.1.right" timestamp="1600023150569">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="2" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600005010083" />
+    <state width="1877" height="213" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600023150569" />
     <state width="1877" height="97" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599774423139" />
     <state x="811" y="222" key="RollbackChangesDialog" timestamp="1599939989104">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="811" y="222" key="RollbackChangesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599939989104" />
-    <state x="461" y="165" key="SettingsEditor" timestamp="1599937997422">
+    <state x="461" y="165" key="SettingsEditor" timestamp="1600012120614">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599937997422" />
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600012120614" />
     <state x="807" y="435" key="VCS.ChangelistChooser" timestamp="1599926039217">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="807" y="435" key="VCS.ChangelistChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599926039217" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1599954107336">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1600016538538">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599954107336" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600016538538" />
     <state width="968" height="528" key="XDebugger.FullValuePopup" timestamp="1599934411083">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -233,14 +232,19 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/main.go</url>
-          <line>25</line>
-          <option name="timeStamp" value="16" />
+          <url>file://$PROJECT_DIR$/../OctaForceEngineGo/Window.go</url>
+          <line>34</line>
+          <option name="timeStamp" value="37" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/../OctaForceEngineGo/Mesh.go</url>
-          <line>143</line>
-          <option name="timeStamp" value="17" />
+          <url>file://$PROJECT_DIR$/main.go</url>
+          <line>33</line>
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/../OctaForceEngineGo/Transform.go</url>
+          <line>29</line>
+          <option name="timeStamp" value="58" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
