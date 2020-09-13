@@ -2,9 +2,17 @@ package main
 
 import (
 	"OctaForceEngineGo"
-	"github.com/go-gl/mathgl/mgl32"
 	"log"
+	"path/filepath"
+	"runtime"
 )
+
+var absPath string
+
+func init() {
+	_, b, _, _ := runtime.Caller(0)
+	absPath = filepath.Dir(b)
+}
 
 func main() {
 	OctaForce.StartUp(start, stop)
@@ -16,17 +24,9 @@ func start() {
 	OctaForce.AddUpdateCallback(update)
 
 	e1 := OctaForce.CreateEntity()
-	OctaForce.AddComponent(e1, OctaForce.COMPONENT_Transform)
-	transform1 := OctaForce.GetComponent(e1, OctaForce.COMPONENT_Transform).(OctaForce.Transform)
-	transform1.Position = mgl32.Vec3{1, 1, 1}
-
-	e2 := OctaForce.CreateEntity()
-	OctaForce.AddComponent(e2, OctaForce.COMPONENT_Transform)
-	transform2 := OctaForce.GetComponent(e2, OctaForce.COMPONENT_Transform).(OctaForce.Transform)
-	transform2.Position = mgl32.Vec3{2, 2, 2}
-
-	OctaForce.RemoveComponent(e2, OctaForce.COMPONENT_Transform)
-	OctaForce.DeleteEntity(e2)
+	mesh := OctaForce.AddComponent(e1, OctaForce.COMPONENT_Mesh).(OctaForce.Mesh)
+	mesh = OctaForce.LoadOBJ(absPath + "/mesh/cube.obj")
+	OctaForce.SetComponent(e1, OctaForce.COMPONENT_Mesh, mesh)
 }
 
 func update() {
