@@ -16,35 +16,43 @@ func init() {
 }
 
 func main() {
-	OctaForce.StartUp(start, stop)
+	OF.StartUp(start, stop)
 }
 
 func start() {
-	OctaForce.SetMaxFPS(60)
-	OctaForce.SetMaxUPS(20)
-	OctaForce.AddUpdateCallback(update)
+	OF.SetMaxFPS(60)
+	OF.SetMaxUPS(20)
+	OF.AddUpdateCallback(update)
 
-	e1 := OctaForce.CreateEntity()
-	mesh := OctaForce.AddComponent(e1, OctaForce.COMPONENT_Mesh).(OctaForce.Mesh)
-	mesh = OctaForce.LoadOBJ(absPath + "/mesh/Cube.obj")
-	OctaForce.SetComponent(e1, OctaForce.COMPONENT_Mesh, mesh)
+	e0 := OF.CreateEntity()
+	OF.AddComponent(e0, OF.COMPONENT_Camera)
+	transform := OF.GetComponent(e0, OF.COMPONENT_Transform).(OF.Transform)
+	transform.Position = mgl32.Vec3{5, 0, 10}
+	transform.Rotation = mgl32.Vec3{0, 0, 0}
+	OF.SetComponent(e0, OF.COMPONENT_Transform, transform)
+	OF.SetActiveCameraEntity(e0)
 
-	transform := OctaForce.GetComponent(e1, OctaForce.COMPONENT_Transform).(OctaForce.Transform)
+	e1 := OF.CreateEntity()
+	mesh := OF.AddComponent(e1, OF.COMPONENT_Mesh).(OF.Mesh)
+	mesh = OF.LoadOBJ(absPath + "/mesh/Cube.obj")
+	OF.SetComponent(e1, OF.COMPONENT_Mesh, mesh)
+
+	transform = OF.GetComponent(e1, OF.COMPONENT_Transform).(OF.Transform)
 	transform.Position = mgl32.Vec3{-5, -5, -10}
-	OctaForce.SetComponent(e1, OctaForce.COMPONENT_Transform, transform)
+	OF.SetComponent(e1, OF.COMPONENT_Transform, transform)
 
-	e1 = OctaForce.CreateEntity()
-	mesh = OctaForce.AddComponent(e1, OctaForce.COMPONENT_Mesh).(OctaForce.Mesh)
-	mesh = OctaForce.LoadOBJ(absPath + "/mesh/Sphere.obj")
-	OctaForce.SetComponent(e1, OctaForce.COMPONENT_Mesh, mesh)
+	e1 = OF.CreateEntity()
+	mesh = OF.AddComponent(e1, OF.COMPONENT_Mesh).(OF.Mesh)
+	mesh = OF.LoadOBJ(absPath + "/mesh/Sphere.obj")
+	OF.SetComponent(e1, OF.COMPONENT_Mesh, mesh)
 
-	transform = OctaForce.GetComponent(e1, OctaForce.COMPONENT_Transform).(OctaForce.Transform)
+	transform = OF.GetComponent(e1, OF.COMPONENT_Transform).(OF.Transform)
 	transform.Position = mgl32.Vec3{5, 5, -10}
-	OctaForce.SetComponent(e1, OctaForce.COMPONENT_Transform, transform)
+	OF.SetComponent(e1, OF.COMPONENT_Transform, transform)
 }
 
 func update() {
-	log.Print(OctaForce.GetFPS())
+	log.Print(OF.GetFPS())
 }
 
 func stop() {
