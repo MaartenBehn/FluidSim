@@ -2,8 +2,8 @@ package main
 
 import (
 	of "OctaForceEngineGo"
+	"fmt"
 	math "github.com/go-gl/mathgl/mgl32"
-	"log"
 	"path/filepath"
 	"runtime"
 )
@@ -19,18 +19,19 @@ func main() {
 	of.StartUp(start, stop)
 }
 
+var camera int
+
 func start() {
 	of.SetMaxFPS(60)
 	of.SetMaxUPS(20)
 	of.AddUpdateCallback(update)
 
-	e0 := of.CreateEntity()
-	of.AddComponent(e0, of.ComponentCamera)
-	transform := of.GetComponent(e0, of.ComponentTransform).(of.Transform)
-	transform.Position = math.Vec3{5, 0, 10}
-	transform.Rotation = math.Vec3{0, 0, 0}
-	of.SetComponent(e0, of.ComponentTransform, transform)
-	of.SetActiveCameraEntity(e0)
+	camera = of.CreateEntity()
+	of.AddComponent(camera, of.ComponentCamera)
+	transform := of.GetComponent(camera, of.ComponentTransform).(of.Transform)
+	transform.SetPosition(math.Vec3{0, 0, 10})
+	of.SetComponent(camera, of.ComponentTransform, transform)
+	of.SetActiveCameraEntity(camera)
 
 	e1 := of.CreateEntity()
 	mesh := of.AddComponent(e1, of.ComponentMesh).(of.Mesh)
@@ -38,7 +39,8 @@ func start() {
 	of.SetComponent(e1, of.ComponentMesh, mesh)
 
 	transform = of.GetComponent(e1, of.ComponentTransform).(of.Transform)
-	transform.Position = math.Vec3{-5, -5, -10}
+	transform.SetPosition(math.Vec3{-5, -5, -10})
+	transform.SetRotaion(math.Vec3{0, 45, 45})
 	of.SetComponent(e1, of.ComponentTransform, transform)
 
 	e1 = of.CreateEntity()
@@ -47,12 +49,33 @@ func start() {
 	of.SetComponent(e1, of.ComponentMesh, mesh)
 
 	transform = of.GetComponent(e1, of.ComponentTransform).(of.Transform)
-	transform.Position = math.Vec3{5, 5, -10}
+	transform.SetPosition(math.Vec3{5, 5, -10})
 	of.SetComponent(e1, of.ComponentTransform, transform)
 }
 
 func update() {
-	log.Print(of.GetFPS())
+	fmt.Println(of.GetFPS())
+
+	transform := of.GetComponent(camera, of.ComponentTransform).(of.Transform)
+	if of.KeyPressed(of.KeyW) {
+		transform.MoveRelative(math.Vec3{0, 0, -1})
+	}
+	if of.KeyPressed(of.KeyS) {
+		transform.MoveRelative(math.Vec3{0, 0, 1})
+	}
+	if of.KeyPressed(of.KeyA) {
+		transform.MoveRelative(math.Vec3{-1, 0, 0})
+	}
+	if of.KeyPressed(of.KeyD) {
+		transform.MoveRelative(math.Vec3{1, 0, 0})
+	}
+	if of.KeyPressed(of.KeyQ) {
+		transform.Rotate(math.Vec3{1, 0, 0})
+	}
+	if of.KeyPressed(of.KeyE) {
+		transform.Rotate(math.Vec3{-1, 0, 0})
+	}
+	of.SetComponent(camera, of.ComponentTransform, transform)
 }
 
 func stop() {

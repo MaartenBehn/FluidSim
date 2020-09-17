@@ -31,14 +31,12 @@
     <list default="true" id="4023e5a1-d193-4623-8bca-ab0cfb3b0698" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/Camera.go" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/Camera.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/ComponentManager.go" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/ComponentManager.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/Main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/Main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/Mesh.go" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/Mesh.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/Input.go" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/Event.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/Renderer.go" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/Renderer.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/Shader.go" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/Shader.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/Texture.go" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/Texture.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/Transform.go" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/Transform.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/Window.go" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/Window.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/shader/vertexShader.shader" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/shader/vertexShader.shader" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +65,7 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../OctaForceEngineGo" />
     <option name="RESET_MODE" value="HARD" />
+    <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="ProjectId" id="1hHb5viyEno9HVgnXJnzz0sOjeJ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -86,7 +85,7 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../OctaForceEngineGo" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -148,6 +147,8 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="GLFW setup" />
     <MESSAGE value="Cube renderer" />
@@ -165,6 +166,7 @@
     <MESSAGE value="Commenting some shit. But dont worry only the expoesd API. Rest still be magic." />
     <MESSAGE value="No Warnings" />
     <option name="LAST_COMMIT_MESSAGE" value="No Warnings" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" key="#Deployment" timestamp="1599926172704">
@@ -192,62 +194,62 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599834449497" />
-    <state width="1877" height="42" key="GridCell.Tab.0.bottom" timestamp="1600181560900">
+    <state width="1877" height="49" key="GridCell.Tab.0.bottom" timestamp="1600379864951">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="42" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600181560900" />
+    <state width="1877" height="49" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600379864951" />
     <state width="1877" height="97" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599774423225" />
-    <state width="1877" height="42" key="GridCell.Tab.0.center" timestamp="1600181560900">
+    <state width="1877" height="49" key="GridCell.Tab.0.center" timestamp="1600379864951">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="42" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600181560900" />
+    <state width="1877" height="49" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600379864951" />
     <state width="1877" height="97" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599774423225" />
-    <state width="1877" height="42" key="GridCell.Tab.0.left" timestamp="1600181560900">
+    <state width="1877" height="49" key="GridCell.Tab.0.left" timestamp="1600379864951">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="42" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600181560900" />
+    <state width="1877" height="49" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600379864951" />
     <state width="1877" height="97" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599774423225" />
-    <state width="1877" height="42" key="GridCell.Tab.0.right" timestamp="1600181560900">
+    <state width="1877" height="49" key="GridCell.Tab.0.right" timestamp="1600379864951">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="42" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600181560900" />
+    <state width="1877" height="49" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600379864951" />
     <state width="1877" height="97" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599774423225" />
-    <state width="1877" height="42" key="GridCell.Tab.1.bottom" timestamp="1600181560901">
+    <state width="1877" height="42" key="GridCell.Tab.1.bottom" timestamp="1600378749639">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="42" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600181560901" />
+    <state width="1877" height="42" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600378749639" />
     <state width="1877" height="97" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599774423139" />
-    <state width="1877" height="42" key="GridCell.Tab.1.center" timestamp="1600181560901">
+    <state width="1877" height="42" key="GridCell.Tab.1.center" timestamp="1600378749639">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="42" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600181560901" />
+    <state width="1877" height="42" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600378749639" />
     <state width="1877" height="97" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599774423139" />
-    <state width="1877" height="42" key="GridCell.Tab.1.left" timestamp="1600181560901">
+    <state width="1877" height="42" key="GridCell.Tab.1.left" timestamp="1600378749639">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="42" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600181560901" />
+    <state width="1877" height="42" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600378749639" />
     <state width="1877" height="97" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599774423139" />
-    <state width="1877" height="42" key="GridCell.Tab.1.right" timestamp="1600181560901">
+    <state width="1877" height="42" key="GridCell.Tab.1.right" timestamp="1600378749639">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="42" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600181560901" />
+    <state width="1877" height="42" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600378749639" />
     <state width="1877" height="97" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599774423139" />
     <state x="811" y="222" key="RollbackChangesDialog" timestamp="1599939989104">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="811" y="222" key="RollbackChangesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599939989104" />
-    <state x="461" y="165" key="SettingsEditor" timestamp="1600182089644">
+    <state x="461" y="165" key="SettingsEditor" timestamp="1600183164566">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600182089644" />
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600183164566" />
     <state x="807" y="435" key="VCS.ChangelistChooser" timestamp="1599926039217">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="807" y="435" key="VCS.ChangelistChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599926039217" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1600181785430">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1600182531621">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600181785430" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600182531621" />
     <state width="968" height="528" key="XDebugger.FullValuePopup" timestamp="1599934411083">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
