@@ -35,7 +35,8 @@ func start() {
 
 	e1 := of.CreateEntity()
 	mesh := of.AddComponent(e1, of.ComponentMesh).(of.Mesh)
-	mesh = of.LoadOBJ(absPath + "/mesh/Cube.obj")
+	mesh = of.LoadOBJ("mesh/Cube.obj", false)
+	mesh.Material = of.Material{DiffuseColor: math.Vec3{0.5, 0.2, 1}}
 	of.SetComponent(e1, of.ComponentMesh, mesh)
 
 	transform = of.GetComponent(e1, of.ComponentTransform).(of.Transform)
@@ -45,7 +46,8 @@ func start() {
 
 	e1 = of.CreateEntity()
 	mesh = of.AddComponent(e1, of.ComponentMesh).(of.Mesh)
-	mesh = of.LoadOBJ(absPath + "/mesh/Sphere.obj")
+	mesh = of.LoadOBJ("mesh/Sphere.obj", false)
+	mesh.Material = of.Material{DiffuseColor: math.Vec3{0.8, 0.2, 0.3}}
 	of.SetComponent(e1, of.ComponentMesh, mesh)
 
 	transform = of.GetComponent(e1, of.ComponentTransform).(of.Transform)
