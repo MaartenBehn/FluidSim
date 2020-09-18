@@ -23,7 +23,7 @@ var camera int
 
 func start() {
 	of.SetMaxFPS(60)
-	of.SetMaxUPS(20)
+	of.SetMaxUPS(30)
 	of.AddUpdateCallback(update)
 
 	camera = of.CreateEntity()
@@ -40,7 +40,7 @@ func start() {
 	of.SetComponent(e1, of.ComponentMesh, mesh)
 
 	transform = of.GetComponent(e1, of.ComponentTransform).(of.Transform)
-	transform.SetPosition(math.Vec3{-5, -5, -10})
+	transform.SetPosition(math.Vec3{0, 0, -10})
 	transform.SetRotaion(math.Vec3{0, 45, 45})
 	of.SetComponent(e1, of.ComponentTransform, transform)
 
@@ -51,31 +51,37 @@ func start() {
 	of.SetComponent(e1, of.ComponentMesh, mesh)
 
 	transform = of.GetComponent(e1, of.ComponentTransform).(of.Transform)
-	transform.SetPosition(math.Vec3{5, 5, -10})
+	transform.SetPosition(math.Vec3{1, 0, -20})
 	of.SetComponent(e1, of.ComponentTransform, transform)
 }
+
+const (
+	movementSpeed float32 = 10
+	mouseSpeed    float32 = 3
+)
 
 func update() {
 	fmt.Println(of.GetFPS())
 
+	deltaTime := float32(of.GetDeltaTime())
+
 	transform := of.GetComponent(camera, of.ComponentTransform).(of.Transform)
 	if of.KeyPressed(of.KeyW) {
-		transform.MoveRelative(math.Vec3{0, 0, -1})
+		transform.MoveRelative(math.Vec3{0, 0, -1}.Mul(deltaTime * movementSpeed))
 	}
 	if of.KeyPressed(of.KeyS) {
-		transform.MoveRelative(math.Vec3{0, 0, 1})
+		transform.MoveRelative(math.Vec3{0, 0, 1}.Mul(deltaTime * movementSpeed))
 	}
 	if of.KeyPressed(of.KeyA) {
-		transform.MoveRelative(math.Vec3{-1, 0, 0})
+		transform.MoveRelative(math.Vec3{-1, 0, 0}.Mul(deltaTime * movementSpeed))
 	}
 	if of.KeyPressed(of.KeyD) {
-		transform.MoveRelative(math.Vec3{1, 0, 0})
+		transform.MoveRelative(math.Vec3{1, 0, 0}.Mul(deltaTime * movementSpeed))
 	}
-	if of.KeyPressed(of.KeyQ) {
-		transform.Rotate(math.Vec3{1, 0, 0})
-	}
-	if of.KeyPressed(of.KeyE) {
-		transform.Rotate(math.Vec3{-1, 0, 0})
+	if of.MouseButtonPressed(of.MouseButtonLeft) {
+		mouseMovement := of.GetMouseMovement()
+		transform.Rotate(math.Vec3{-1, 0, 0}.Mul(mouseMovement.Y() * deltaTime * mouseSpeed))
+		transform.Rotate(math.Vec3{0, 1, 0}.Mul(mouseMovement.X() * deltaTime * mouseSpeed))
 	}
 	of.SetComponent(camera, of.ComponentTransform, transform)
 }
