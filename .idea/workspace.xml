@@ -29,13 +29,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4023e5a1-d193-4623-8bca-ab0cfb3b0698" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Profiling.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Simulation/Particle.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Simulation/Simulation.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/Event.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/ComponentManager.go" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/ComponentManager.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/Main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/Main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/Renderer.go" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/Renderer.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/Transform.go" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/Transform.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/Window.go" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/Window.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +55,7 @@
       </list>
     </option>
   </component>
-  <component name="GOROOT" path="$PROJECT_DIR$/../../../../Programms/Program Files/Go" />
+  <component name="GOROOT" path="$PROJECT_DIR$/../../../../Program Files/Go" />
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -62,9 +63,16 @@
         <entry key="$PROJECT_DIR$/../OctaForceEngineGo" value="master" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../OctaForceEngineGo" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
     <option name="ROOT_SYNC" value="SYNC" />
+  </component>
+  <component name="GoLibraries">
+    <option name="urls">
+      <list>
+        <option value="file://$PROJECT_DIR$" />
+      </list>
+    </option>
   </component>
   <component name="ProjectId" id="1hHb5viyEno9HVgnXJnzz0sOjeJ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -81,18 +89,37 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="configurable.Global.GOPATH.is.expanded" value="true" />
+    <property name="configurable.Module.GOPATH.is.expanded" value="true" />
+    <property name="configurable.Project.GOPATH.is.expanded" value="true" />
     <property name="go.import.settings.migrated" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../OctaForceEngineGo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/main.go" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="H:\dev\Go\src\FluidSim\FluidSim" />
       <recent name="H:\dev\Go\src\FluidSim" />
       <recent name="H:\dev\Go\src\FluidSim\Window" />
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="FluidSim" />
+      <working_directory value="$PROJECT_DIR$" />
+      <go_parameters value="-i" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/../FluidSim|$PROJECT_DIR$/main.go" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
     <configuration name="go build FluidSim" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="FluidSim" />
       <working_directory value="$PROJECT_DIR$" />
@@ -110,6 +137,16 @@
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4023e5a1-d193-4623-8bca-ab0cfb3b0698" name="Default Changelist" comment="" />
+      <created>1600533813993</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1600533813993</updated>
+    </task>
+    <servers />
+  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
@@ -167,7 +204,8 @@
     <MESSAGE value="Input system camera keyboard movement" />
     <MESSAGE value="Fixed OBJ loading bug" />
     <MESSAGE value="vertexColor and materials" />
-    <option name="LAST_COMMIT_MESSAGE" value="vertexColor and materials" />
+    <MESSAGE value="Camera Mouse Rotation, Depth test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Camera Mouse Rotation, Depth test" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -175,6 +213,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#Deployment/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599926172704" />
+    <state x="752" y="178" key="#GOPATH" timestamp="1600533967915">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="752" y="178" key="#GOPATH/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600533967915" />
+    <state x="752" y="451" key="#GOROOT" timestamp="1600533930757">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="752" y="451" key="#GOROOT/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600533930757" />
+    <state x="414" y="175" width="1092" height="715" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600533893663">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="175" width="1092" height="715" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600533893663" />
     <state x="871" y="273" width="841" height="494" key="#xdebugger.XInspectDialog" timestamp="1599934417857">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -192,49 +242,49 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600094150099" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1599834449497">
+    <state x="850" y="318" key="FileChooserDialogImpl" timestamp="1600533966727">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599834449497" />
-    <state width="1877" height="49" key="GridCell.Tab.0.bottom" timestamp="1600454684166">
+    <state x="850" y="318" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600533966727" />
+    <state width="1877" height="2" key="GridCell.Tab.0.bottom" timestamp="1600555943120">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="49" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600454684166" />
+    <state width="1877" height="2" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600555943120" />
     <state width="1877" height="97" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599774423225" />
-    <state width="1877" height="49" key="GridCell.Tab.0.center" timestamp="1600454684166">
+    <state width="1877" height="2" key="GridCell.Tab.0.center" timestamp="1600555943120">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="49" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600454684166" />
+    <state width="1877" height="2" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600555943120" />
     <state width="1877" height="97" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599774423225" />
-    <state width="1877" height="49" key="GridCell.Tab.0.left" timestamp="1600454684166">
+    <state width="1877" height="2" key="GridCell.Tab.0.left" timestamp="1600555943120">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="49" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600454684166" />
+    <state width="1877" height="2" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600555943120" />
     <state width="1877" height="97" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599774423225" />
-    <state width="1877" height="49" key="GridCell.Tab.0.right" timestamp="1600454684166">
+    <state width="1877" height="2" key="GridCell.Tab.0.right" timestamp="1600555943120">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="49" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600454684166" />
+    <state width="1877" height="2" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600555943120" />
     <state width="1877" height="97" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599774423225" />
-    <state width="1877" height="83" key="GridCell.Tab.1.bottom" timestamp="1600453409778">
+    <state width="1877" height="2" key="GridCell.Tab.1.bottom" timestamp="1600555943120">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="83" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600453409778" />
+    <state width="1877" height="2" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600555943120" />
     <state width="1877" height="97" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599774423139" />
-    <state width="1877" height="83" key="GridCell.Tab.1.center" timestamp="1600453409778">
+    <state width="1877" height="2" key="GridCell.Tab.1.center" timestamp="1600555943120">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="83" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600453409778" />
+    <state width="1877" height="2" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600555943120" />
     <state width="1877" height="97" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599774423139" />
-    <state width="1877" height="83" key="GridCell.Tab.1.left" timestamp="1600453409778">
+    <state width="1877" height="2" key="GridCell.Tab.1.left" timestamp="1600555943120">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="83" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600453409778" />
+    <state width="1877" height="2" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600555943120" />
     <state width="1877" height="97" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599774423139" />
-    <state width="1877" height="83" key="GridCell.Tab.1.right" timestamp="1600453409778">
+    <state width="1877" height="2" key="GridCell.Tab.1.right" timestamp="1600555943120">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="83" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600453409778" />
+    <state width="1877" height="2" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600555943120" />
     <state width="1877" height="97" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599774423139" />
     <state x="811" y="222" key="RollbackChangesDialog" timestamp="1599939989104">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -248,10 +298,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="807" y="435" key="VCS.ChangelistChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599926039217" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1600450887042">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1600454818398">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600450887042" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600454818398" />
     <state width="968" height="528" key="XDebugger.FullValuePopup" timestamp="1599934411083">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
