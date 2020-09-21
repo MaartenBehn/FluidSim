@@ -4,7 +4,16 @@ import (
 	of "OctaForceEngineGo"
 	"github.com/go-gl/mathgl/mgl32"
 	"math/rand"
+	"path/filepath"
+	"runtime"
 )
+
+var absPath string
+
+func init() {
+	_, b, _, _ := runtime.Caller(0)
+	absPath = filepath.Dir(b)
+}
 
 var particles []particle
 var particleCount int
@@ -17,12 +26,12 @@ func SetUpSimulation() {
 
 	particleCount = 1000
 	postionBounds = 100
-	startVelocityBounds = 0
+	startVelocityBounds = 2
 	g = 1
-	collisionDistance = 0
+	collisionDistance = 1
 
 	particles = make([]particle, particleCount)
-	mesh := of.LoadOBJ("mesh/Sphere.obj", false)
+	mesh := of.LoadOBJ(absPath+"/mesh/Sphere.obj", false)
 
 	for i := 0; i < particleCount; i++ {
 		particle := particle{

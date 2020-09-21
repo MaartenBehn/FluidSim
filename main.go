@@ -5,11 +5,10 @@ import (
 	of "OctaForceEngineGo"
 	"fmt"
 	"github.com/go-gl/mathgl/mgl32"
-	"github.com/pkg/profile"
 )
 
 func main() {
-	defer profile.Start().Stop()
+	//defer profile.Start().Stop()
 
 	of.StartUp(start, update, stop)
 }
@@ -31,7 +30,7 @@ func start() {
 }
 
 const (
-	movementSpeed float32 = 10
+	movementSpeed float32 = 100
 	mouseSpeed    float32 = 3
 )
 
