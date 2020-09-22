@@ -66,13 +66,13 @@ func update() {
 	}
 	of.SetComponent(camera, of.ComponentTransform, transform)
 
-	if of.KeyPressed(of.Key1) {
+	if of.KeyPressed(of.KeyQ) {
 		render.UpdateRenderer(currentFrame)
 		if currentFrame < render.FrameCount-1 {
 			currentFrame++
 		}
 	}
-	if of.KeyPressed(of.Key2) {
+	if of.KeyPressed(of.KeyE) {
 		render.UpdateRenderer(currentFrame)
 		if currentFrame > 0 {
 			currentFrame--

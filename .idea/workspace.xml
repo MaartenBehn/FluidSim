@@ -29,8 +29,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4023e5a1-d193-4623-8bca-ab0cfb3b0698" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Simulation/Particle.go" beforeDir="false" afterPath="$PROJECT_DIR$/Simulation/Particle.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Simulation/Simulation.go" beforeDir="false" afterPath="$PROJECT_DIR$/Simulation/Simulation.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -197,7 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600793087940</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Elastic collision system">
+      <created>1600805265077</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1600805265077</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,7 +267,8 @@
     <MESSAGE value="FPS, UPS Bug Fixes" />
     <MESSAGE value="Simple Newton Gravity Simulation" />
     <MESSAGE value="Changing Frames with 1 and 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changing Frames with 1 and 2" />
+    <MESSAGE value="Elastic collision system" />
+    <option name="LAST_COMMIT_MESSAGE" value="Elastic collision system" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -313,29 +319,29 @@
     </state>
     <state x="901" y="230" width="424" height="479" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1600763451310" />
     <state x="1267" y="328" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600556405641" />
-    <state width="1877" height="115" key="GridCell.Tab.0.bottom" timestamp="1600805227384">
+    <state width="1877" height="115" key="GridCell.Tab.0.bottom" timestamp="1600805604753">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1314" height="145" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1600772941568" />
-    <state width="1877" height="115" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600805227384" />
+    <state width="1877" height="115" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600805604753" />
     <state width="1877" height="217" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600702949266" />
-    <state width="1877" height="115" key="GridCell.Tab.0.center" timestamp="1600805227384">
+    <state width="1877" height="115" key="GridCell.Tab.0.center" timestamp="1600805604753">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1314" height="145" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1600772941567" />
-    <state width="1877" height="115" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600805227384" />
+    <state width="1877" height="115" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600805604753" />
     <state width="1877" height="217" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600702949266" />
-    <state width="1877" height="115" key="GridCell.Tab.0.left" timestamp="1600805227384">
+    <state width="1877" height="115" key="GridCell.Tab.0.left" timestamp="1600805604753">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1314" height="145" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1600772941567" />
-    <state width="1877" height="115" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600805227384" />
+    <state width="1877" height="115" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600805604753" />
     <state width="1877" height="217" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600702949266" />
-    <state width="1877" height="115" key="GridCell.Tab.0.right" timestamp="1600805227384">
+    <state width="1877" height="115" key="GridCell.Tab.0.right" timestamp="1600805604753">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1314" height="145" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1600772941567" />
-    <state width="1877" height="115" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600805227384" />
+    <state width="1877" height="115" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600805604753" />
     <state width="1877" height="217" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600702949266" />
     <state width="1877" height="256" key="GridCell.Tab.1.bottom" timestamp="1600804102490">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -374,10 +380,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="807" y="435" key="VCS.ChangelistChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599926039217" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1600793090848">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1600805266808">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600793090848" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600805266808" />
     <state width="968" height="528" key="XDebugger.FullValuePopup" timestamp="1599934411083">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -22,9 +22,9 @@ var frameCount int
 
 func SetUpSimulation(_frameCount int, absPath string) {
 
-	particleCount = 100
+	particleCount = 1000
 	postionBounds = 100
-	startVelocityBounds = 0.1
+	startVelocityBounds = 1
 	g = 1
 	collisionDistance = 1
 	collisionFriction = 0.1
