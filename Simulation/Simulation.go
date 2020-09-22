@@ -17,15 +17,17 @@ var postionBounds float32
 var startVelocityBounds float32
 var g float32
 var collisionDistance float32
+var collisionFriction float32
 var frameCount int
 
 func SetUpSimulation(_frameCount int, absPath string) {
 
-	particleCount = 1000
+	particleCount = 100
 	postionBounds = 100
-	startVelocityBounds = 2
+	startVelocityBounds = 0.1
 	g = 1
 	collisionDistance = 1
+	collisionFriction = 0.1
 	frameCount = _frameCount
 	outFilePath = absPath + "/simulationData.txt"
 
@@ -63,13 +65,20 @@ func UpdateSimulation(frame int) {
 	newParticles := make([]particle, particleCount)
 	for i, particle := range particles {
 		fmt.Printf("Calculating Particle %d of %d in Frame %d of %d \r", i, len(particles), frame, frameCount)
+
 		newParticles[i] = updateParticle(particle)
+	}
+
+	for i, _ := range newParticles {
+		newParticles[i] = updateColision(newParticles[i])
+		newParticles[i] = updatePosition(newParticles[i])
+
 		file.WriteString("p " + strconv.FormatInt(int64(i), 10) + " " +
 			strconv.FormatFloat(float64(newParticles[i].position[0]), 'f', -1, 64) + " " +
 			strconv.FormatFloat(float64(newParticles[i].position[1]), 'f', -1, 64) + " " +
 			strconv.FormatFloat(float64(newParticles[i].position[2]), 'f', -1, 64) + "\n")
-
 	}
+
 	particles = newParticles
 }
 
