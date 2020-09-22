@@ -11,7 +11,7 @@ import (
 
 var inFilePath string
 var particleCount uint32
-var frameCount uint32
+var FrameCount uint32
 var particles []particle
 
 func SetUpRenderer(absPath string) {
@@ -34,12 +34,12 @@ func SetUpRenderer(absPath string) {
 		switch values[0] {
 		case "info":
 			particleCount = of.ParseInt(values[1])
-			frameCount = of.ParseInt(values[2])
+			FrameCount = of.ParseInt(values[2])
 
 			particles = make([]particle, particleCount)
 			for i := range particles {
 				particles[i] = particle{
-					postions: make([]mgl32.Vec3, frameCount),
+					postions: make([]mgl32.Vec3, FrameCount),
 					entityId: of.CreateEntity(),
 				}
 				of.AddComponent(particles[i].entityId, of.ComponentMesh)
@@ -65,7 +65,7 @@ func SetUpRenderer(absPath string) {
 	}
 }
 
-func UpdateRenderer(frame int) {
+func UpdateRenderer(frame uint32) {
 	for _, particle := range particles {
 		transform := of.GetComponent(particle.entityId, of.ComponentTransform).(of.Transform)
 		transform.SetPosition(particle.postions[frame])

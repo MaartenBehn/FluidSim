@@ -31,6 +31,7 @@ func start() {
 	absPath := filepath.Dir(b)
 
 	render.SetUpRenderer(absPath)
+	render.UpdateRenderer(0)
 }
 
 const (
@@ -38,7 +39,7 @@ const (
 	mouseSpeed    float32 = 3
 )
 
-var currentFrame int
+var currentFrame uint32
 
 func update() {
 	fmt.Printf("FPS: %f UPS: %f \r", of.GetFPS(), of.GetUPS())
@@ -65,8 +66,18 @@ func update() {
 	}
 	of.SetComponent(camera, of.ComponentTransform, transform)
 
-	render.UpdateRenderer(currentFrame)
-	currentFrame++
+	if of.KeyPressed(of.Key1) {
+		render.UpdateRenderer(currentFrame)
+		if currentFrame < render.FrameCount-1 {
+			currentFrame++
+		}
+	}
+	if of.KeyPressed(of.Key2) {
+		render.UpdateRenderer(currentFrame)
+		if currentFrame > 0 {
+			currentFrame--
+		}
+	}
 }
 
 func stop() {
