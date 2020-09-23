@@ -2,52 +2,30 @@ package Simulation
 
 import (
 	"github.com/go-gl/mathgl/mgl32"
+	"math"
 )
 
 type particle struct {
-	position           mgl32.Vec3
-	mass               float32
-	velocity           mgl32.Vec3
+	position mgl32.Vec3 // position = position + velocity
+	velocity mgl32.Vec3 // velocity = velocity + forces / mass
+	forces   mgl32.Vec3
+
+	mass     float32
+	density  float32 // pi = Element(j) * mj * Wij
+	pressure float32
+
 	collidingParticles []particle
 }
 
-func updateParticle(currentParticle particle) particle {
+func (currentParticle *particle) calculateDensity(otherParticle particle) {
 
-	currentParticle.collidingParticles = make([]particle, 0)
+	distance := otherParticle.position.Sub(currentParticle.position).Len()
 
-	for _, neigborParticle := range particles {
-		if neigborParticle.position == currentParticle.position {
-			continue
-		}
-
-		relativePostion := neigborParticle.position.Sub(currentParticle.position)
-		distance := relativePostion.Len()
-
-		if distance < collisionDistance*2 {
-			currentParticle.collidingParticles = append(currentParticle.collidingParticles, neigborParticle)
-		} else {
-			currentParticle.velocity = currentParticle.velocity.Add(relativePostion.Mul(
-				(g * currentParticle.mass * neigborParticle.mass) / (distance * distance * distance)))
-		}
-	}
-
-	return currentParticle
+	currentParticle.density += currentParticle.mass *
+		float32((315.0/(64.0*math.Pi*math.Pow(smoothingDistance, 9)))*
+			math.Pow(smoothingDistance-float64(distance), 3))
 }
 
-// r = d - n * 2 * dot(d, n)
-func updateColision(currentParticle particle) particle {
-	if len(currentParticle.collidingParticles) > 0 {
-		for _, collidingPraticle := range currentParticle.collidingParticles {
-
-			normVector := currentParticle.position.Sub(collidingPraticle.position).Normalize()
-			currentParticle.velocity = currentParticle.velocity.Sub(normVector.Mul(
-				2 * currentParticle.velocity.Dot(normVector)))
-		}
-	}
-	return currentParticle
-}
-
-func updatePosition(currentParticle particle) particle {
-	currentParticle.position = currentParticle.position.Add(currentParticle.velocity)
-	return currentParticle
+func (currentParticle *particle) calculatePressure() {
+	currentParticle.pressure = gas * (currentParticle.density - restDensity)
 }
