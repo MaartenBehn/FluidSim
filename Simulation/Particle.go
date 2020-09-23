@@ -15,6 +15,7 @@ type particle struct {
 	pressure float32
 
 	collidingParticles []particle
+	lastFrameCollision bool
 }
 
 func (currentParticle *particle) calculateDensity(otherParticle particle) {

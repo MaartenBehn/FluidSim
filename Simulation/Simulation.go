@@ -22,7 +22,7 @@ var postionBounds float32
 var startVelocityBounds float32
 var g float32
 var collisionDistance float32
-var collisionEnergyConversion float32
+var collisionElasticEnergy float32
 var smoothingDistance float64
 
 var frameCount int
@@ -31,10 +31,10 @@ func SetUpSimulation(_frameCount int, absPath string) {
 
 	particleCount = 100
 	postionBounds = 100
-	startVelocityBounds = 0.1
+	startVelocityBounds = 0.5
 	g = 1
 	collisionDistance = 1
-	collisionEnergyConversion = 0.5
+	collisionElasticEnergy = 1
 	smoothingDistance = 1
 
 	frameCount = _frameCount
@@ -103,6 +103,11 @@ func UpdateSimulation(frame int) {
 		newParticle.velocity = newParticle.velocity.Add(
 			newParticle.forces.Mul(1 / newParticle.mass))
 
+		newParticles[i] = newParticle
+	}
+
+	for i, newParticle := range newParticles {
+
 		// Colliding Neigbors
 		newParticle.collidingParticles = make([]particle, 0)
 		for _, neigborParticle := range particles {
@@ -116,32 +121,43 @@ func UpdateSimulation(frame int) {
 			}
 		}
 
-		newParticles[i] = newParticle
-	}
-
-	for i, newParticle := range newParticles {
-
 		// Collision
-		if len(newParticle.collidingParticles) > 0 {
+		newParticle.lastFrameCollision = false
+		collidingParticleAmmount := float32(len(newParticle.collidingParticles))
+		if collidingParticleAmmount > 0 {
+
+			newParticle.lastFrameCollision = true
+
+			velocityElastic := newParticle.velocity
+			velocityPastic := newParticle.velocity
 			for _, collidingPraticle := range newParticle.collidingParticles {
 
 				normVector := collidingPraticle.position.Sub(newParticle.position).Normalize()
 
 				// r = d - n * 2 * dot(d, n)
 				// velocity = velocity - norm(pos1 - pos2) * 2 * dot(velocity, norm(pos1 - pos2))
-				velocity1 := newParticle.velocity.Sub(normVector.Mul(
-					2 * newParticle.velocity.Dot(normVector))).Mul(collisionEnergyConversion)
+				velocityElastic = velocityElastic.Sub(normVector.Mul(
+					2 * velocityElastic.Dot(normVector)))
 
-				velocity2 := newParticle.velocity.Add(collidingPraticle.velocity).Mul(
-					0.5 * (1 - collisionEnergyConversion))
+				velocityPastic = velocityPastic.Add(collidingPraticle.velocity)
 
-				newParticle.velocity = velocity1.Add(velocity2)
 			}
+
+			elasticEnergyConversiom := collisionElasticEnergy
+			if particles[i].lastFrameCollision && elasticEnergyConversiom < 1 {
+				elasticEnergyConversiom = 0
+			}
+
+			velocityElastic = velocityElastic.Mul(elasticEnergyConversiom)
+			velocityPastic = velocityPastic.Mul((1 / (collidingParticleAmmount + 1)) * (1 - elasticEnergyConversiom))
+			newParticle.velocity = velocityElastic.Add(velocityPastic)
+
 		}
 
 		// Position
 		newParticle.position = newParticle.position.Add(newParticle.velocity)
 
+		// Writing pos to file
 		file.WriteString("p " + strconv.FormatInt(int64(i), 10) + " " +
 			strconv.FormatFloat(float64(newParticle.position[0]), 'f', -1, 64) + " " +
 			strconv.FormatFloat(float64(newParticle.position[1]), 'f', -1, 64) + " " +
