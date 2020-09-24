@@ -18,6 +18,8 @@ func (currentParticle *particle) setUpForNewFrame() {
 	currentParticle.forces = mgl32.Vec3{}
 }
 
+const g = 1
+
 func (currentParticle *particle) applyGravityForce() {
 
 	for _, neigborParticle := range particles {
@@ -49,6 +51,12 @@ func (currentParticle *particle) applyVelocityToPosition() {
 	// position = position + velocity
 	currentParticle.position = currentParticle.position.Add(currentParticle.velocity)
 }
+
+const (
+	collisionDistance              = 1
+	doCollision                    = false
+	collisionElasticEnergy float32 = 0.5
+)
 
 func (currentParticle *particle) applyColisionToVelocity() {
 

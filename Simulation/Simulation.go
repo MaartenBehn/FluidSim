@@ -8,22 +8,17 @@ import (
 	"strconv"
 )
 
-const (
-	particleCount       = 4
-	postionBounds       = 10
-	startVelocityBounds = 0
-
-	g                              = 1
-	collisionDistance              = 1
-	doCollision                    = false
-	collisionElasticEnergy float32 = 0.5
-)
-
 var outFilePath string
 var file os.File
 
 var particles []particle
 var frameCount int
+
+const (
+	particleCount       = 4
+	postionBounds       = 10
+	startVelocityBounds = 0
+)
 
 func SetUpSimulation(_frameCount int, absPath string) {
 
