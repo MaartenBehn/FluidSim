@@ -2,7 +2,6 @@ package Simulation
 
 import (
 	"github.com/go-gl/mathgl/mgl32"
-	"math"
 )
 
 type particle struct {
@@ -14,19 +13,9 @@ type particle struct {
 	density  float32 // pi = Element(j) * mj * Wij
 	pressure float32
 
-	collidingParticles []particle
 	lastFrameCollision bool
 }
 
-func (currentParticle *particle) calculateDensity(otherParticle particle) {
-
-	distance := otherParticle.position.Sub(currentParticle.position).Len()
-
-	currentParticle.density += currentParticle.mass *
-		float32((315.0/(64.0*math.Pi*math.Pow(smoothingDistance, 9)))*
-			math.Pow(smoothingDistance-float64(distance), 3))
-}
-
 func (currentParticle *particle) calculatePressure() {
-	currentParticle.pressure = gas * (currentParticle.density - restDensity)
+
 }
