@@ -15,12 +15,17 @@ var particles []particle
 var frameCount int
 
 const (
-	particleCount       = 10
-	postionBounds       = 10
+	particleCount       = 30
+	postionBounds       = 20
 	startVelocityBounds = 0
 
-	volumePerPaeticle  float32 = 1000
-	densityPerParticle float32 = 100
+	volumePerPaeticle  float32 = 100
+	densityPerParticle float32 = 10
+
+	pressureScale         float32 = 1
+	gravityScale          float32 = 0.000001
+	kernelSmoothingRadius float32 = 10
+	viscosityScale        float32 = 1
 )
 
 var overAllVolume float32
@@ -78,8 +83,9 @@ func UpdateSimulation(frame int) {
 
 	for i, currentParticle := range particles {
 
-		currentParticle.applyPressureForce()
-		currentParticle.applyGravityForce()
+		currentParticle.applyPressureVelocity()
+		currentParticle.applyViscosityVelocity()
+		currentParticle.applyGravityVelocity()
 
 		particles[i] = currentParticle
 	}
