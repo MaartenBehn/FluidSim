@@ -7,15 +7,46 @@ import (
 type particle struct {
 	position mgl32.Vec3
 	velocity mgl32.Vec3
-	forces   mgl32.Vec3
 
-	mass               float32
+	mass     float32
+	density  float32
+	pressure float32
+	volume   float32
+
 	lastFrameCollision bool
 }
 
-func (currentParticle *particle) setUpForNewFrame() {
+const (
+	k float32 = 0.1
+)
 
-	currentParticle.forces = mgl32.Vec3{}
+func (currentParticle *particle) calcDensityAndPressure() {
+
+	currentParticle.density = 0
+
+	for _, neigborParticle := range particles {
+		if neigborParticle.position == currentParticle.position {
+			continue
+		}
+
+		currentParticle.density += neigborParticle.mass *
+			KernalFunction(currentParticle.position, neigborParticle.position)
+	}
+
+	currentParticle.pressure = k * ((currentParticle.density / overAllDensity) - 1)
+}
+
+func (currentParticle *particle) applyPressureForce() {
+	for _, neigborParticle := range particles {
+		if neigborParticle.position == currentParticle.position {
+			continue
+		}
+
+		currentParticle.velocity = currentParticle.velocity.Add(
+			KernalFunction2(currentParticle.position, neigborParticle.position).Mul(-1 * neigborParticle.mass *
+				((currentParticle.pressure / (currentParticle.density * currentParticle.density)) +
+					(neigborParticle.pressure / (neigborParticle.density * neigborParticle.density)))))
+	}
 }
 
 const g = 1
@@ -27,24 +58,20 @@ func (currentParticle *particle) applyGravityForce() {
 			continue
 		}
 
-		// Public Vars
 		relativePosition := neigborParticle.position.Sub(currentParticle.position)
 		distance := relativePosition.Len()
 
-		// Gravity Force
-		// force = g * mass1 * mass2 / |pos2 - pos1|^3 * pos2 - pos1
 		if distance > collisionDistance*2 {
-			currentParticle.forces = currentParticle.forces.Add(
-				relativePosition.Mul(g * currentParticle.mass * neigborParticle.mass /
-					(distance * distance * distance)))
+
+			// Gravity Force
+			// force = g * mass1 * mass2 / |pos2 - pos1|^3 * pos2 - pos1
+			force := relativePosition.Mul(g * currentParticle.mass * neigborParticle.mass /
+				(distance * distance * distance))
+
+			currentParticle.velocity = currentParticle.velocity.Add(force.Mul(1 / currentParticle.mass))
+
 		}
 	}
-}
-
-func (currentParticle *particle) applyForcesToVelocity() {
-	// velocity = velocity + forces / mass
-	currentParticle.velocity = currentParticle.velocity.Add(
-		currentParticle.forces.Mul(1 / currentParticle.mass))
 }
 
 func (currentParticle *particle) applyVelocityToPosition() {

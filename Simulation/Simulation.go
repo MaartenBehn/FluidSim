@@ -15,10 +15,16 @@ var particles []particle
 var frameCount int
 
 const (
-	particleCount       = 4
+	particleCount       = 10
 	postionBounds       = 10
 	startVelocityBounds = 0
+
+	volumePerPaeticle  float32 = 1000
+	densityPerParticle float32 = 100
 )
+
+var overAllVolume float32
+var overAllDensity float32
 
 func SetUpSimulation(_frameCount int, absPath string) {
 
@@ -34,9 +40,11 @@ func SetUpSimulation(_frameCount int, absPath string) {
 	file.WriteString("info " + strconv.Itoa(particleCount) + " " + strconv.Itoa(frameCount) + "\n")
 
 	particles = make([]particle, particleCount)
+	overAllDensity = densityPerParticle * particleCount
+	overAllVolume = volumePerPaeticle * particleCount
 
 	for i := 0; i < particleCount; i++ {
-		particle := particle{
+		currentParticle := particle{
 			position: mgl32.Vec3{
 				(rand.Float32()*2 - 1) * postionBounds,
 				(rand.Float32()*2 - 1) * postionBounds,
@@ -47,10 +55,12 @@ func SetUpSimulation(_frameCount int, absPath string) {
 				(rand.Float32()*2 - 1) * startVelocityBounds,
 				(rand.Float32()*2 - 1) * startVelocityBounds,
 			},
-			mass: 1,
 		}
 
-		particles[i] = particle
+		currentParticle.volume = overAllVolume / particleCount
+		currentParticle.mass = overAllDensity * currentParticle.volume
+
+		particles[i] = currentParticle
 	}
 }
 
@@ -61,11 +71,15 @@ func UpdateSimulation(frame int) {
 		// Console Print
 		fmt.Printf("Calculating Particle %d of %d in Frame %d of %d \r", i, len(particles), frame, frameCount)
 
-		currentParticle.setUpForNewFrame()
+		currentParticle.calcDensityAndPressure()
 
+		particles[i] = currentParticle
+	}
+
+	for i, currentParticle := range particles {
+
+		currentParticle.applyPressureForce()
 		currentParticle.applyGravityForce()
-
-		currentParticle.applyForcesToVelocity()
 
 		particles[i] = currentParticle
 	}
