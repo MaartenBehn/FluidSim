@@ -30,9 +30,9 @@
   <component name="ChangeListManager">
     <list default="true" id="4023e5a1-d193-4623-8bca-ab0cfb3b0698" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Simulation/Math.go" beforeDir="false" afterPath="$PROJECT_DIR$/Simulation/Math.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Simulation/Particle.go" beforeDir="false" afterPath="$PROJECT_DIR$/Simulation/Particle.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Simulation/Simulation.go" beforeDir="false" afterPath="$PROJECT_DIR$/Simulation/Simulation.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runSimulation.go" beforeDir="false" afterPath="$PROJECT_DIR$/runSimulation.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +62,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
     <option name="ROOT_SYNC" value="SYNC" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GoLibraries">
     <option name="urls">
@@ -260,7 +261,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601048092975</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Bla Curvature Force geht zawr nich aber hier für die Ewigkeit">
+      <created>1601133166614</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1601133166614</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,7 +310,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="OBJ Loader" />
     <MESSAGE value="Mesh Component system" />
     <MESSAGE value="Cleaned Up Renderer" />
     <MESSAGE value="Moving of Meshes with Transform" />
@@ -327,7 +334,8 @@
     <MESSAGE value="Deleted all fluidstuff and created proper particle functions calls" />
     <MESSAGE value="new Kernel functions I kinda understand them" />
     <MESSAGE value="I think Pressure is Working" />
-    <option name="LAST_COMMIT_MESSAGE" value="I think Pressure is Working" />
+    <MESSAGE value="Bla Curvature Force geht zawr nich aber hier für die Ewigkeit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bla Curvature Force geht zawr nich aber hier für die Ewigkeit" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="WindowStateProjectService">
@@ -382,54 +390,58 @@
     </state>
     <state x="901" y="230" width="424" height="479" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1600763451310" />
     <state x="1267" y="328" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600870934479" />
-    <state width="1877" height="294" key="GridCell.Tab.0.bottom" timestamp="1601132883276">
+    <state width="1877" height="152" key="GridCell.Tab.0.bottom" timestamp="1601136747842">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1314" height="145" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1600772941568" />
-    <state width="1877" height="294" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601132883276" />
+    <state width="1877" height="152" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601136747842" />
     <state width="1877" height="217" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600702949266" />
-    <state width="1877" height="294" key="GridCell.Tab.0.center" timestamp="1601132883276">
+    <state width="1877" height="152" key="GridCell.Tab.0.center" timestamp="1601136747841">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1314" height="145" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1600772941567" />
-    <state width="1877" height="294" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601132883276" />
+    <state width="1877" height="152" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601136747841" />
     <state width="1877" height="217" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600702949266" />
-    <state width="1877" height="294" key="GridCell.Tab.0.left" timestamp="1601132883276">
+    <state width="1877" height="152" key="GridCell.Tab.0.left" timestamp="1601136747841">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1314" height="145" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1600772941567" />
-    <state width="1877" height="294" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601132883276" />
+    <state width="1877" height="152" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601136747841" />
     <state width="1877" height="217" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600702949266" />
-    <state width="1877" height="294" key="GridCell.Tab.0.right" timestamp="1601132883276">
+    <state width="1877" height="152" key="GridCell.Tab.0.right" timestamp="1601136747841">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1314" height="145" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1600772941567" />
-    <state width="1877" height="294" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601132883276" />
+    <state width="1877" height="152" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601136747841" />
     <state width="1877" height="217" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600702949266" />
-    <state width="1877" height="294" key="GridCell.Tab.1.bottom" timestamp="1601132883204">
+    <state width="1877" height="309" key="GridCell.Tab.1.bottom" timestamp="1601136735717">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1314" height="271" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1600771602354" />
-    <state width="1877" height="294" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601132883204" />
+    <state width="1877" height="309" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601136735717" />
     <state width="1877" height="97" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599774423139" />
-    <state width="1877" height="294" key="GridCell.Tab.1.center" timestamp="1601132883204">
+    <state width="1877" height="309" key="GridCell.Tab.1.center" timestamp="1601136735717">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1314" height="271" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1600771602354" />
-    <state width="1877" height="294" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601132883204" />
+    <state width="1877" height="309" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601136735717" />
     <state width="1877" height="97" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599774423139" />
-    <state width="1877" height="294" key="GridCell.Tab.1.left" timestamp="1601132883204">
+    <state width="1877" height="309" key="GridCell.Tab.1.left" timestamp="1601136735717">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1314" height="271" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1600771602353" />
-    <state width="1877" height="294" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601132883204" />
+    <state width="1877" height="309" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601136735717" />
     <state width="1877" height="97" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599774423139" />
-    <state width="1877" height="294" key="GridCell.Tab.1.right" timestamp="1601132883204">
+    <state width="1877" height="309" key="GridCell.Tab.1.right" timestamp="1601136735717">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1314" height="271" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1600771602354" />
-    <state width="1877" height="294" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601132883204" />
+    <state width="1877" height="309" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601136735717" />
     <state width="1877" height="97" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599774423139" />
+    <state x="598" y="281" key="MultipleFileMergeDialog" timestamp="1601133228650">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601133228650" />
     <state x="811" y="222" key="RollbackChangesDialog" timestamp="1599939989104">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -443,10 +455,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="807" y="435" key="VCS.ChangelistChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599926039217" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1601048095725">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1601133240539">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601048095725" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601133240539" />
     <state width="968" height="528" key="XDebugger.FullValuePopup" timestamp="1599934411083">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -485,8 +497,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/Simulation/Particle.go</url>
-          <line>139</line>
-          <option name="timeStamp" value="27" />
+          <line>92</line>
+          <option name="timeStamp" value="28" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

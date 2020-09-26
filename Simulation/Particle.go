@@ -79,7 +79,7 @@ func (currentParticle *particle) applyViscosityVelocity() {
 	}
 }
 
-func (currentParticle *particle) calcCohesionForce() mgl32.Vec3 {
+func (currentParticle *particle) applyCohesionVelocity() {
 
 	force := mgl32.Vec3{}
 	for _, neigborParticle := range particles {
@@ -93,51 +93,8 @@ func (currentParticle *particle) calcCohesionForce() mgl32.Vec3 {
 		force = force.Add(relativePosition.Mul((cohesionScale * currentParticle.mass * neigborParticle.mass *
 			CohesionSplineFunction(distance)) / distance))
 
-		currentParticle.velocity = currentParticle.velocity.Add(force.Mul(1 / currentParticle.mass))
 	}
-	return force
-}
-func (currentParticle *particle) calcColorFieldNormal() {
-	currentParticle.colorfieldNormal = mgl32.Vec3{}
-	for _, neigborParticle := range particles {
-		if neigborParticle.position == currentParticle.position {
-			continue
-		}
-
-		normal := KernalFunction2(currentParticle.position, neigborParticle.position).Mul(
-			colorFieldScale * (neigborParticle.mass / neigborParticle.density))
-
-		currentParticle.colorfieldNormal = currentParticle.colorfieldNormal.Add(normal)
-
-	}
-}
-
-func (currentParticle *particle) calcCurvatureForce() mgl32.Vec3 {
-
-	force := mgl32.Vec3{}
-	for _, neigborParticle := range particles {
-		if neigborParticle.position == currentParticle.position {
-			continue
-		}
-
-		force = force.Add(currentParticle.colorfieldNormal.Sub(neigborParticle.colorfieldNormal).Mul(
-			-curviatureScale * currentParticle.mass))
-
-	}
-	return force
-}
-func (currentParticle *particle) applySurfaceTensionVelocity() {
-	for _, neigborParticle := range particles {
-		if neigborParticle.position == currentParticle.position {
-			continue
-		}
-
-		k := (2 * overAllDensity) / (currentParticle.density + neigborParticle.density)
-		force1 := currentParticle.calcCohesionForce()
-		force2 := currentParticle.calcCurvatureForce()
-
-		currentParticle.velocity = currentParticle.velocity.Add(force1.Add(force2).Mul(k))
-	}
+	currentParticle.velocity = currentParticle.velocity.Add(force.Mul(1 / currentParticle.mass))
 }
 
 func (currentParticle *particle) applyGravityVelocity() {

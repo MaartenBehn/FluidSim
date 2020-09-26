@@ -22,7 +22,7 @@ const (
 	volumePerPaeticle  float32 = 1
 	densityPerParticle float32 = 1
 
-	smoothingRadius float32 = 20
+	smoothingRadius float32 = 10
 
 	cohesionScale   float32 = 1
 	colorFieldScale float32 = 1
@@ -31,9 +31,8 @@ const (
 	pressureScale  float32 = 1
 	viscosityScale float32 = 1
 
-	gravityScale       float32 = 0.000001
-	staticGravityScale float32 = 0 //0.001
-
+	gravityScale       float32 = 0.0001
+	staticGravityScale float32 = 0.001
 )
 
 var overAllDensity float32
@@ -86,33 +85,10 @@ func UpdateSimulation(frame int) {
 	file.WriteString("f " + strconv.Itoa(frame) + "\n")
 
 	for i, currentParticle := range particles {
-		// Console Print
+
 		fmt.Printf("Calculating Particle %d of %d in Frame %d of %d \r", i, len(particles), frame, frameCount)
 
-		currentParticle.calcDensityAndPressure()
-
-		particles[i] = currentParticle
-	}
-
-	for i, currentParticle := range particles {
-
-		currentParticle.calcColorFieldNormal()
-
-		particles[i] = currentParticle
-	}
-
-	for i, currentParticle := range particles {
-
-		currentParticle.applySurfaceTensionVelocity()
-		//currentParticle.applyPressureVelocity()
-		//currentParticle.applyViscosityVelocity()
-		//currentParticle.applyStaticGravityVelocity()
-
-		particles[i] = currentParticle
-	}
-
-	for i, currentParticle := range particles {
-
+		currentParticle.applyCohesionVelocity()
 		currentParticle.applyVelocityToPosition()
 
 		// Writing pos to file
