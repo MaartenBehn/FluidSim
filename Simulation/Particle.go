@@ -8,17 +8,80 @@ type particle struct {
 	position mgl32.Vec3
 	velocity mgl32.Vec3
 
-	mass                   float32
-	neigborParticleAmmount float32
-	neigborRadius          float32
+	mass     float32
+	density  float32
+	pressure float32
+	volume   float32
+
+	colorfieldNormal mgl32.Vec3
 
 	lastFrameCollision bool
 }
 
-func (currentParticle *particle) applyPressureVelocity() {
+func (currentParticle *particle) calcDensityAndPressure() {
 
-	neigborCount := float32(0)
-	toOtherParticleVector := mgl32.Vec3{}
+	currentParticle.density = 0
+
+	for _, neigborParticle := range particles {
+		if neigborParticle.position == currentParticle.position {
+			continue
+		}
+
+		currentParticle.density += neigborParticle.mass *
+			KernalFunction(currentParticle.position, neigborParticle.position)
+	}
+
+	currentParticle.pressure = pressureScale * ((currentParticle.density / overAllDensity) - 1)
+	if currentParticle.pressure < 0 {
+		currentParticle.pressure = 0
+	}
+}
+
+func (currentParticle *particle) applyPressureVelocity() {
+	for _, neigborParticle := range particles {
+		if neigborParticle.position == currentParticle.position {
+			continue
+		}
+
+		velocity := KernalFunction2(currentParticle.position, neigborParticle.position).Mul(-1 * neigborParticle.mass *
+			((currentParticle.pressure / (currentParticle.density * currentParticle.density)) +
+				(neigborParticle.pressure / (neigborParticle.density * neigborParticle.density))))
+
+		if !isVec3NAN(velocity) {
+			currentParticle.velocity = currentParticle.velocity.Add(velocity)
+		}
+	}
+}
+
+func (currentParticle *particle) applyViscosityVelocity() {
+
+	velocity := mgl32.Vec3{}
+	for _, neigborParticle := range particles {
+		if neigborParticle.position == currentParticle.position {
+			continue
+		}
+
+		velocity = velocity.Add(
+			KernalFunction2(currentParticle.position, neigborParticle.position).Mul(
+				(neigborParticle.mass / neigborParticle.density) *
+					neigborParticle.velocity.Dot(neigborParticle.position) /
+					(neigborParticle.position.Dot(neigborParticle.position) +
+						(0.01 * smoothingRadius * smoothingRadius))))
+
+	}
+	velocity.Mul(
+		2 * viscosityScale * currentParticle.velocity.Dot(currentParticle.position) /
+			(currentParticle.position.Dot(currentParticle.position) +
+				(0.01 * smoothingRadius * smoothingRadius)))
+
+	if !isVec3NAN(velocity) {
+		currentParticle.velocity = currentParticle.velocity.Add(velocity)
+	}
+}
+
+func (currentParticle *particle) calcCohesionForce() mgl32.Vec3 {
+
+	force := mgl32.Vec3{}
 	for _, neigborParticle := range particles {
 		if neigborParticle.position == currentParticle.position {
 			continue
@@ -27,23 +90,54 @@ func (currentParticle *particle) applyPressureVelocity() {
 		relativePosition := neigborParticle.position.Sub(currentParticle.position)
 		distance := relativePosition.Len()
 
-		toOtherParticleVector = toOtherParticleVector.Add(relativePosition.Normalize())
+		force = force.Add(relativePosition.Mul((cohesionScale * currentParticle.mass * neigborParticle.mass *
+			CohesionSplineFunction(distance)) / distance))
 
-		if distance < currentParticle.neigborRadius*1.5 {
-			neigborCount++
+		currentParticle.velocity = currentParticle.velocity.Add(force.Mul(1 / currentParticle.mass))
+	}
+	return force
+}
+func (currentParticle *particle) calcColorFieldNormal() {
+	currentParticle.colorfieldNormal = mgl32.Vec3{}
+	for _, neigborParticle := range particles {
+		if neigborParticle.position == currentParticle.position {
+			continue
 		}
-	}
-	toOtherParticleVector.Normalize()
 
-	countForce := mgl32.Vec3{}
-	if neigborCount < currentParticle.neigborParticleAmmount {
-		countForce = toOtherParticleVector.Mul((1 - (neigborCount / currentParticle.neigborParticleAmmount)) * pressureCountScale)
-	}
-	if neigborCount > currentParticle.neigborParticleAmmount {
-		countForce = toOtherParticleVector.Mul((1 - (currentParticle.neigborParticleAmmount / neigborCount)) * -pressureCountScale)
-	}
+		normal := KernalFunction2(currentParticle.position, neigborParticle.position).Mul(
+			colorFieldScale * (neigborParticle.mass / neigborParticle.density))
 
-	currentParticle.velocity = currentParticle.velocity.Add(countForce.Mul(1 / currentParticle.mass))
+		currentParticle.colorfieldNormal = currentParticle.colorfieldNormal.Add(normal)
+
+	}
+}
+
+func (currentParticle *particle) calcCurvatureForce() mgl32.Vec3 {
+
+	force := mgl32.Vec3{}
+	for _, neigborParticle := range particles {
+		if neigborParticle.position == currentParticle.position {
+			continue
+		}
+
+		force = force.Add(currentParticle.colorfieldNormal.Sub(neigborParticle.colorfieldNormal).Mul(
+			-curviatureScale * currentParticle.mass))
+
+	}
+	return force
+}
+func (currentParticle *particle) applySurfaceTensionVelocity() {
+	for _, neigborParticle := range particles {
+		if neigborParticle.position == currentParticle.position {
+			continue
+		}
+
+		k := (2 * overAllDensity) / (currentParticle.density + neigborParticle.density)
+		force1 := currentParticle.calcCohesionForce()
+		force2 := currentParticle.calcCurvatureForce()
+
+		currentParticle.velocity = currentParticle.velocity.Add(force1.Add(force2).Mul(k))
+	}
 }
 
 func (currentParticle *particle) applyGravityVelocity() {
@@ -67,6 +161,13 @@ func (currentParticle *particle) applyGravityVelocity() {
 
 		}
 	}
+}
+
+func (currentParticle *particle) applyStaticGravityVelocity() {
+
+	normalPosition := currentParticle.position.Normalize()
+	force := normalPosition.Mul(-staticGravityScale * currentParticle.mass)
+	currentParticle.velocity = currentParticle.velocity.Add(force.Mul(1 / currentParticle.mass))
 }
 
 func (currentParticle *particle) applyVelocityToPosition() {

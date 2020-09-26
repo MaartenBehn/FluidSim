@@ -15,19 +15,32 @@ var particles []particle
 var frameCount int
 
 const (
-	particleCount       = 5
-	postionBounds       = 5
+	particleCount       = 30
+	postionBounds       = 4
 	startVelocityBounds = 0
 
-	gravityScale       float32 = 0
-	pressureCountScale float32 = 0.1
-	pressureScale      float32 = 0.1
+	volumePerPaeticle  float32 = 1
+	densityPerParticle float32 = 1
+
+	smoothingRadius float32 = 20
+
+	cohesionScale   float32 = 1
+	colorFieldScale float32 = 1
+	curviatureScale float32 = 1
+
+	pressureScale  float32 = 1
+	viscosityScale float32 = 1
+
+	gravityScale       float32 = 0.000001
+	staticGravityScale float32 = 0 //0.001
+
 )
 
-var overAllVolume float32
 var overAllDensity float32
 
 func SetUpSimulation(_frameCount int, absPath string) {
+
+	overAllDensity = densityPerParticle * particleCount
 
 	frameCount = _frameCount
 	outFilePath = absPath + "/simulationData.txt"
@@ -39,9 +52,9 @@ func SetUpSimulation(_frameCount int, absPath string) {
 	}
 	file = *newfile
 	file.WriteString("info " + strconv.Itoa(particleCount) + " " + strconv.Itoa(frameCount+1) + "\n")
-	file.WriteString("f " + strconv.Itoa(0) + "\n")
-
 	particles = make([]particle, particleCount)
+
+	file.WriteString("f " + strconv.Itoa(0) + "\n")
 	for i := 0; i < particleCount; i++ {
 		currentParticle := particle{
 			position: mgl32.Vec3{
@@ -54,10 +67,10 @@ func SetUpSimulation(_frameCount int, absPath string) {
 				(rand.Float32()*2 - 1) * startVelocityBounds,
 				(rand.Float32()*2 - 1) * startVelocityBounds,
 			},
-			mass:                   1,
-			neigborRadius:          10,
-			neigborParticleAmmount: 1,
 		}
+
+		currentParticle.volume = volumePerPaeticle
+		currentParticle.mass = overAllDensity * currentParticle.volume
 
 		file.WriteString("p " + strconv.FormatInt(int64(i), 10) + " " +
 			strconv.FormatFloat(float64(currentParticle.position[0]), 'f', -1, 64) + " " +
@@ -66,25 +79,40 @@ func SetUpSimulation(_frameCount int, absPath string) {
 
 		particles[i] = currentParticle
 	}
-
 }
 
 func UpdateSimulation(frame int) {
 	frame++
-
 	file.WriteString("f " + strconv.Itoa(frame) + "\n")
 
 	for i, currentParticle := range particles {
-
+		// Console Print
 		fmt.Printf("Calculating Particle %d of %d in Frame %d of %d \r", i, len(particles), frame, frameCount)
+
+		currentParticle.calcDensityAndPressure()
 
 		particles[i] = currentParticle
 	}
 
 	for i, currentParticle := range particles {
 
-		currentParticle.applyPressureVelocity()
-		currentParticle.applyGravityVelocity()
+		currentParticle.calcColorFieldNormal()
+
+		particles[i] = currentParticle
+	}
+
+	for i, currentParticle := range particles {
+
+		currentParticle.applySurfaceTensionVelocity()
+		//currentParticle.applyPressureVelocity()
+		//currentParticle.applyViscosityVelocity()
+		//currentParticle.applyStaticGravityVelocity()
+
+		particles[i] = currentParticle
+	}
+
+	for i, currentParticle := range particles {
+
 		currentParticle.applyVelocityToPosition()
 
 		// Writing pos to file
