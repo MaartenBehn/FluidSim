@@ -72,7 +72,7 @@ func createBlockofParticles(size mgl64.Vec3, position mgl64.Vec3, velocity mgl64
 			for z := 0.0; z <= size[2]; z += spacing {
 
 				particle := Particle{
-					position: mgl64.Vec3{(x + position[0]) * cm, (y + position[1]) * cm, (z + position[2]) * cm},
+					position: mgl64.Vec3{(x + position[0] - (size[0] / 2)) * cm, (y + position[1] - (size[0] / 2)) * cm, (z + position[2] - (size[0] / 2)) * cm},
 					velocity: mgl64.Vec3{velocity[0], velocity[1], velocity[2]},
 					density:  rho,
 				}
