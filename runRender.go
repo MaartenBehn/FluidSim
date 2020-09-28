@@ -9,8 +9,15 @@ import (
 	"runtime"
 )
 
+var absPath string
+
 func main() {
 	//defer profile.Start().Stop()
+
+	_, b, _, _ := runtime.Caller(0)
+	absPath = filepath.Dir(b)
+
+	render.SelectDataFile(absPath)
 	of.StartUp(start, update, stop)
 }
 
@@ -27,9 +34,6 @@ func start() {
 	of.SetComponent(camera, of.ComponentTransform, transform)
 	of.SetActiveCameraEntity(camera)
 
-	_, b, _, _ := runtime.Caller(0)
-	absPath := filepath.Dir(b)
-
 	render.SetUpRenderer(absPath)
 	render.UpdateRenderer(0)
 }
@@ -39,7 +43,7 @@ const (
 	mouseSpeed    float32 = 3
 )
 
-var currentFrame uint32
+var currentFrame int
 
 func update() {
 	fmt.Printf("FPS: %f UPS: %f \r", of.GetFPS(), of.GetUPS())

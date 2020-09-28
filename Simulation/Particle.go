@@ -1,193 +1,100 @@
 package Simulation
 
 import (
-	"github.com/go-gl/mathgl/mgl32"
+	"github.com/go-gl/mathgl/mgl64"
 )
 
-type particle struct {
-	position mgl32.Vec3
-	velocity mgl32.Vec3
+type Particle struct {
+	position     mgl64.Vec3
+	velocity     mgl64.Vec3
+	acceleration mgl64.Vec3
 
-	mass     float32
-	density  float32
-	pressure float32
-	volume   float32
-
-	colorfieldNormal mgl32.Vec3
-
-	lastFrameCollision bool
+	density, nextDensity float64
 }
 
-func (currentParticle *particle) calcDensityAndPressure() {
+func (particle *Particle) updateAcceleration() {
+	// Get the neighbors and distances to them
+	neighbors, distances := particle.findNeigbors(kernelRadius)
 
-	currentParticle.density = 0
+	// Initialize all accumulated quantities to zero
+	density := 0.0
+	colorLaplace := 0.0
+	colorGradient := mgl64.Vec3{}
+	force := mgl64.Vec3{}
 
-	for _, neigborParticle := range particles {
-		if neigborParticle.position == currentParticle.position {
-			continue
+	// Compute pressure due to the Particle itself. This is used for computing the
+	// actual pressure by averaging this with the pressures due to other particles.
+	selfPressure := pressureConstant * (particle.density - rho)
+
+	// For all particles within the kernel radius
+	for i, neighbor := range neighbors {
+		// Density. Note that unlike other properties, the Particle contributes
+		// to its own density.  This avoids having particles with a zero density.
+		density += particleMass * smoothingKernel(distances[i])
+
+		if neighbor != *particle {
+			// Pressure
+			neighborPressure := pressureConstant * (neighbor.density - rho)
+			pressureScale := particleMass * (selfPressure + neighborPressure) / (2 * neighbor.density) * derivPressureKernel(distances[i])
+
+			neighborDirection := neighbor.position.Sub(particle.position)
+			force = force.Add(neighborDirection.Mul(pressureScale / distances[i]))
+
+			// Surface tension (color!)
+			colorScaling := particleMass / neighbor.density * derivSmoothingKernel(distances[i])
+			colorLaplace += particleMass / neighbor.density * laplaceSmoothingKernel(distances[i])
+			colorGradient = colorGradient.Add(neighborDirection.Mul(colorScaling))
+
+			// Viscosity
+			viscosityScale := mu * particleMass / neighbor.density * laplaceViscosityKernel(distances[i])
+			viscosityDirection := neighbor.velocity.Sub(particle.velocity)
+			force = force.Add(viscosityDirection.Mul(viscosityScale))
 		}
-
-		currentParticle.density += neigborParticle.mass *
-			KernalFunction(currentParticle.position, neigborParticle.position)
 	}
 
-	currentParticle.pressure = pressureScale * ((currentParticle.density / overAllDensity) - 1)
-	if currentParticle.pressure < 0 {
-		currentParticle.pressure = 0
+	// Only count color when it exists Otherwise, this causes the normalization
+	// to fail and then particles become NaN.
+	if colorGradient.X() > 0 || colorGradient.Y() > 0 || colorGradient.Z() > 0 {
+		force = force.Add(colorGradient.Normalize().Mul(colorLaplace * surfaceTensionConstant))
 	}
+
+	// Gravity, pointing down
+	//force.Z += -gravity
+
+	// Set acceleration based on force, via F = ma
+	particle.acceleration = force.Mul(1.0 / particleMass)
+
+	// Set the to-be density
+	particle.nextDensity = density
 }
 
-func (currentParticle *particle) applyPressureVelocity() {
-	for _, neigborParticle := range particles {
-		if neigborParticle.position == currentParticle.position {
-			continue
-		}
+func (particle *Particle) findNeigbors(radius float64) ([]Particle, []float64) {
 
-		velocity := KernalFunction2(currentParticle.position, neigborParticle.position).Mul(-1 * neigborParticle.mass *
-			((currentParticle.pressure / (currentParticle.density * currentParticle.density)) +
-				(neigborParticle.pressure / (neigborParticle.density * neigborParticle.density))))
+	distances := make([]float64, 0)
+	neigbors := make([]Particle, 0)
+	for _, otherParticle := range particles {
+		distance := otherParticle.position.Sub(particle.position).Len()
 
-		if !isVec3NAN(velocity) {
-			currentParticle.velocity = currentParticle.velocity.Add(velocity)
+		if distance < radius {
+			distances = append(distances, distance)
+			neigbors = append(neigbors, otherParticle)
 		}
 	}
+
+	return neigbors, distances
 }
 
-func (currentParticle *particle) applyViscosityVelocity() {
-
-	velocity := mgl32.Vec3{}
-	for _, neigborParticle := range particles {
-		if neigborParticle.position == currentParticle.position {
-			continue
-		}
-
-		velocity = velocity.Add(
-			KernalFunction2(currentParticle.position, neigborParticle.position).Mul(
-				(neigborParticle.mass / neigborParticle.density) *
-					neigborParticle.velocity.Dot(neigborParticle.position) /
-					(neigborParticle.position.Dot(neigborParticle.position) +
-						(0.01 * smoothingRadius * smoothingRadius))))
-
-	}
-	velocity.Mul(
-		2 * viscosityScale * currentParticle.velocity.Dot(currentParticle.position) /
-			(currentParticle.position.Dot(currentParticle.position) +
-				(0.01 * smoothingRadius * smoothingRadius)))
-
-	if !isVec3NAN(velocity) {
-		currentParticle.velocity = currentParticle.velocity.Add(velocity)
-	}
+// Update Particle state and display properties.
+func (particle *Particle) updateVelocity() {
+	// Update velocity
+	particle.velocity = particle.velocity.Add(particle.acceleration.Mul(dt))
 }
 
-func (currentParticle *particle) applyCohesionVelocity() {
+// Update Particle state and display properties.
+func (particle *Particle) updatePosition() {
+	// Update velocity, position
+	particle.position = particle.position.Add(particle.velocity.Mul(dt))
 
-	force := mgl32.Vec3{}
-	for _, neigborParticle := range particles {
-		if neigborParticle.position == currentParticle.position {
-			continue
-		}
-
-		relativePosition := neigborParticle.position.Sub(currentParticle.position)
-		distance := relativePosition.Len()
-
-		force = force.Add(relativePosition.Mul((cohesionScale * currentParticle.mass * neigborParticle.mass *
-			CohesionSplineFunction(distance)) / distance))
-
-	}
-	currentParticle.velocity = currentParticle.velocity.Add(force.Mul(1 / currentParticle.mass))
-}
-
-func (currentParticle *particle) applyGravityVelocity() {
-
-	for _, neigborParticle := range particles {
-		if neigborParticle.position == currentParticle.position {
-			continue
-		}
-
-		relativePosition := neigborParticle.position.Sub(currentParticle.position)
-		distance := relativePosition.Len()
-
-		if distance > collisionDistance*2 {
-
-			// Gravity Force
-			// force = gravityConst * mass1 * mass2 / |pos2 - pos1|^3 * pos2 - pos1
-			force := relativePosition.Mul(gravityScale * currentParticle.mass * (neigborParticle.mass /
-				(distance * distance * distance)))
-
-			currentParticle.velocity = currentParticle.velocity.Add(force.Mul(1 / currentParticle.mass))
-
-		}
-	}
-}
-
-func (currentParticle *particle) applyStaticGravityVelocity() {
-
-	normalPosition := currentParticle.position.Normalize()
-	force := normalPosition.Mul(-staticGravityScale * currentParticle.mass)
-	currentParticle.velocity = currentParticle.velocity.Add(force.Mul(1 / currentParticle.mass))
-}
-
-func (currentParticle *particle) applyVelocityToPosition() {
-	// position = position + velocity
-	currentParticle.position = currentParticle.position.Add(currentParticle.velocity)
-}
-
-const (
-	collisionDistance              = 1
-	doCollision                    = false
-	collisionElasticEnergy float32 = 0.5
-)
-
-func (currentParticle *particle) applyColisionToVelocity() {
-
-	if doCollision {
-		currentParticle.lastFrameCollision = false
-
-		normalVectorSum := mgl32.Vec3{}         // Sum of all relative Vectors for Elastic Collision
-		velocitySum := currentParticle.velocity // Sum of all Collider Velocities for Plastic Collision
-		collidingParticleAmmount := 0           // Number of Particles how are Colliding
-
-		for _, neigborParticle := range particles {
-			if neigborParticle.position == currentParticle.position {
-				continue
-			}
-
-			// Public Vars
-			relativePositionV := neigborParticle.position.Add(neigborParticle.velocity).Sub(
-				currentParticle.position.Add(neigborParticle.velocity))
-			distanceV := relativePositionV.Len()
-
-			// Collision
-			if distanceV < collisionDistance*2 {
-
-				currentParticle.lastFrameCollision = true
-				collidingParticleAmmount++
-
-				normalVectorSum = normalVectorSum.Add(neigborParticle.position.Sub(currentParticle.position).Normalize())
-
-				velocitySum = velocitySum.Add(neigborParticle.velocity)
-			}
-		}
-
-		// If there are colliding Particles calculate Collision
-		if collidingParticleAmmount > 0 {
-
-			elasticEnergyConversiom := collisionElasticEnergy
-
-			// Ensures that Particles stick to getter if they did not bounce high enough
-			if currentParticle.lastFrameCollision && elasticEnergyConversiom < 1 {
-				elasticEnergyConversiom = 0
-			}
-
-			// r = d - n * 2 * dot(d, n)
-			// velocity = velocity - norm(pos1 - pos2) * 2 * dot(velocity, norm(pos1 - pos2))
-			normalVectorSum = normalVectorSum.Normalize()
-			velocityElastic := (currentParticle.velocity.Sub(normalVectorSum.Mul(
-				2 * currentParticle.velocity.Dot(normalVectorSum)))).Mul(elasticEnergyConversiom)
-
-			velocityPastic := velocitySum.Mul((1 / float32(collidingParticleAmmount+1)) * (1 - elasticEnergyConversiom))
-
-			currentParticle.velocity = velocityElastic.Add(velocityPastic)
-		}
-	}
+	// Update density
+	particle.density = particle.nextDensity
 }
