@@ -6,6 +6,7 @@ import (
 	"math"
 	"os"
 	"strconv"
+	"sync"
 )
 
 var outFilePath string
@@ -29,8 +30,8 @@ const (
 	spacing               = 0.5
 	kernelRadius          = 1.5 * cm
 	particleMass          = 1.0 * g
-	particleRadius        = 0.3 * cm
-	collisionDampingRatio = 0.8
+	particleRadius        = 0.1 * cm
+	collisionDampingRatio = 1
 )
 
 var (
@@ -40,11 +41,13 @@ var (
 
 func SetUpSimulation(_frameCount int, absPath string) {
 
+	fmt.Println("Starting simulation...")
+
 	rho = 1.0 / math.Pow(spacing, 3) * g / (cm * cm * cm) // g/cm^3
 
 	particles = make([]Particle, 0)
 
-	createBlockofParticles(mgl64.Vec3{2, 2, 2}, mgl64.Vec3{}, mgl64.Vec3{})
+	createBlockofParticles(mgl64.Vec3{3, 3, 3}, mgl64.Vec3{}, mgl64.Vec3{1, 0, 0})
 
 	frameCount = _frameCount
 	outFilePath = absPath + "/builds/simulationData.txt"
@@ -64,12 +67,16 @@ func SetUpSimulation(_frameCount int, absPath string) {
 			strconv.FormatFloat(particle.position[2], 'f', -1, 64) + "\n")
 	}
 
+	fmt.Printf("Simulation contains %d particles.\n", particleCount)
+
 }
 
 func createBlockofParticles(size mgl64.Vec3, position mgl64.Vec3, velocity mgl64.Vec3) {
 	for x := 0.0; x <= size[0]; x += spacing {
 		for y := 0.0; y <= size[1]; y += spacing {
 			for z := 0.0; z <= size[2]; z += spacing {
+
+				fmt.Printf("Creating particle %d. \r", particleCount)
 
 				particle := Particle{
 					position: mgl64.Vec3{(x + position[0] - (size[0] / 2)) * cm, (y + position[1] - (size[0] / 2)) * cm, (z + position[2] - (size[0] / 2)) * cm},
@@ -86,30 +93,43 @@ func createBlockofParticles(size mgl64.Vec3, position mgl64.Vec3, velocity mgl64
 
 func UpdateSimulation(frame int) {
 	frame++
+
+	fmt.Printf("Calculating Frame %d of %d. \r", frame, frameCount)
+
+	// Writing Frame number to file
 	file.WriteString("f " + strconv.Itoa(frame) + "\n")
 
+	runInParallel(updateAcceleration)
+	runInParallel(updateVelocity)
+	runInParallel(updatePosition)
+
+	// Writing Particle Pos to file
 	for i, particle := range particles {
-
-		fmt.Printf("Calculating Particle %d of %d in Frame %d of %d \r", i, len(particles), frame, frameCount)
-
-		particle.updateAcceleration()
-
-		particles[i] = particle
-	}
-
-	for i, particle := range particles {
-
-		particle.updateVelocity()
-		particle.updatePosition()
-
 		// Writing pos to file
 		file.WriteString("p " + strconv.FormatInt(int64(i), 10) + " " +
-			strconv.FormatFloat(float64(particle.position[0]), 'f', -1, 64) + " " +
-			strconv.FormatFloat(float64(particle.position[1]), 'f', -1, 64) + " " +
-			strconv.FormatFloat(float64(particle.position[2]), 'f', -1, 64) + "\n")
-
-		particles[i] = particle
+			strconv.FormatFloat(particle.position[0], 'f', -1, 64) + " " +
+			strconv.FormatFloat(particle.position[1], 'f', -1, 64) + " " +
+			strconv.FormatFloat(particle.position[2], 'f', -1, 64) + "\n")
 	}
+}
+
+func runInParallel(function func(particle *Particle)) {
+
+	wg := sync.WaitGroup{}
+	wg.Add(particleCount)
+
+	for i, p := range particles {
+
+		go func(index int, particle Particle) {
+
+			function(&particle)
+			particles[index] = particle
+			wg.Done()
+
+		}(i, p)
+	}
+
+	wg.Wait()
 }
 
 func EndSimulation() {

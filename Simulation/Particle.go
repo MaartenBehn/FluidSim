@@ -12,7 +12,7 @@ type Particle struct {
 	density, nextDensity float64
 }
 
-func (particle *Particle) updateAcceleration() {
+func updateAcceleration(particle *Particle) {
 	// Get the neighbors and distances to them
 	neighbors, distances := particle.findNeigbors(kernelRadius)
 
@@ -85,13 +85,41 @@ func (particle *Particle) findNeigbors(radius float64) ([]Particle, []float64) {
 }
 
 // Update Particle state and display properties.
-func (particle *Particle) updateVelocity() {
+func updateVelocity(particle *Particle) {
 	// Update velocity
 	particle.velocity = particle.velocity.Add(particle.acceleration.Mul(dt))
 }
 
-// Update Particle state and display properties.
-func (particle *Particle) updatePosition() {
+func updateCollisions(particle *Particle) {
+
+	// Get the neighbors and distances to them
+	neighbors, distances := particle.findNeigbors(kernelRadius)
+
+	collisionVelocities := mgl64.Vec3{}
+	collisionCounter := 0.0
+	// For all particles within the kernel radius
+	for i, neighbor := range neighbors {
+
+		if neighbor != *particle && distances[i] < particleRadius*2 {
+
+			collisionCounter++
+
+			// r = v - 2<v, n> n
+			// velocity = velocity - 2 * dot(velocity, norm(pos1 - pos2)) * norm(pos1 - pos2)
+			normal := particle.position.Sub(neighbor.position).Normalize()
+			collisionVelocities = collisionVelocities.Add(
+				(particle.velocity.Sub(normal.Mul(
+					2 * particle.velocity.Dot(normal)))).Mul(collisionDampingRatio))
+
+		}
+	}
+
+	if collisionCounter > 0 {
+		particle.velocity = collisionVelocities.Mul(1 / collisionCounter)
+	}
+}
+
+func updatePosition(particle *Particle) {
 	// Update velocity, position
 	particle.position = particle.position.Add(particle.velocity.Mul(dt))
 
