@@ -3,10 +3,12 @@ package Renderer
 import (
 	of "OctaForceEngineGo"
 	"bufio"
+	"encoding/binary"
 	"fmt"
 	"github.com/go-gl/mathgl/mgl32"
 	"io/ioutil"
 	"log"
+	"math"
 	"math/rand"
 	"os"
 	"strings"
@@ -34,7 +36,7 @@ func SelectDataFile(absPath string) {
 		index = 0
 	}
 
-	inFilePath = absPath + "/builds/" + lines[index] + ".txt"
+	inFilePath = absPath + "/builds/" + lines[index] + ".bin"
 }
 
 var inFilePath string
@@ -49,46 +51,58 @@ func SetUpRenderer(absPath string) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	lines := strings.Split(string(content), "\n")
 
-	var currentFrame int
+	counter := 0
+	particleCount = int(byteToInt32(content[counter*4 : (counter+1)*4]))
+	counter++
 
-	for _, line := range lines {
-		values := strings.Split(line, " ")
-		values[len(values)-1] = strings.Replace(values[len(values)-1], "\r", "", 1)
+	FrameCount = int(byteToInt32(content[counter*4 : (counter+1)*4]))
+	counter++
 
-		switch values[0] {
-		case "info":
-			particleCount = of.ParseInt(values[1])
-			FrameCount = of.ParseInt(values[2])
-
-			particles = make([]particle, particleCount)
-			for i := range particles {
-				particles[i] = particle{
-					postions: make([]mgl32.Vec3, FrameCount),
-					entityId: of.CreateEntity(),
-				}
-				of.AddComponent(particles[i].entityId, of.ComponentMesh)
-				mesh.Material = of.Material{DiffuseColor: mgl32.Vec3{
-					rand.Float32(),
-					rand.Float32(),
-					rand.Float32(),
-				}}
-				of.SetComponent(particles[i].entityId, of.ComponentMesh, mesh)
-			}
-			break
-		case "f":
-			currentFrame = of.ParseInt(values[1])
-			break
-		case "p":
-			currentParticle := of.ParseInt(values[1])
-			particles[currentParticle].postions[currentFrame] = mgl32.Vec3{
-				of.ParseFloat(values[2]),
-				of.ParseFloat(values[3]),
-				of.ParseFloat(values[4])}
-			break
+	particles = make([]particle, particleCount)
+	for i := range particles {
+		particles[i] = particle{
+			postions: make([]mgl32.Vec3, FrameCount),
+			entityId: of.CreateEntity(),
 		}
+		of.AddComponent(particles[i].entityId, of.ComponentMesh)
+		mesh.Material = of.Material{DiffuseColor: mgl32.Vec3{
+			rand.Float32(),
+			rand.Float32(),
+			rand.Float32(),
+		}}
+		of.SetComponent(particles[i].entityId, of.ComponentMesh, mesh)
 	}
+
+	var frame int
+	var index int
+
+	for frame < FrameCount {
+
+		pos := mgl32.Vec3{}
+
+		pos[0] = byteToFloat32(content[counter*4 : (counter+1)*4])
+		counter++
+
+		pos[1] = byteToFloat32(content[counter*4 : (counter+1)*4])
+		counter++
+
+		pos[2] = byteToFloat32(content[counter*4 : (counter+1)*4])
+		counter++
+
+		particles[index].postions[frame] = pos
+
+		frame = counter / particleCount / 3
+		index = (counter - frame*particleCount*3) / 3
+	}
+}
+
+func byteToInt32(buffer []byte) uint32 {
+	return binary.LittleEndian.Uint32(buffer)
+}
+
+func byteToFloat32(buffer []byte) float32 {
+	return math.Float32frombits(binary.LittleEndian.Uint32(buffer))
 }
 
 func UpdateRenderer(frame int) {

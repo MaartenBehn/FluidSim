@@ -5,7 +5,6 @@ import (
 	"github.com/go-gl/mathgl/mgl64"
 	"math"
 	"os"
-	"strconv"
 	"sync"
 )
 
@@ -44,27 +43,18 @@ func SetUpSimulation(_frameCount int, absPath string) {
 	fmt.Println("Starting simulation...")
 
 	rho = 1.0 / math.Pow(spacing, 3) * g / (cm * cm * cm) // g/cm^3
+	frameCount = _frameCount
 
 	particles = make([]Particle, 0)
 
-	createBlockofParticles(mgl64.Vec3{3, 3, 3}, mgl64.Vec3{}, mgl64.Vec3{1, 0, 0})
+	createBlockofParticles(mgl64.Vec3{8, 8, 8}, mgl64.Vec3{}, mgl64.Vec3{})
 
-	frameCount = _frameCount
-	outFilePath = absPath + "/builds/simulationData.txt"
-	newfile, err := os.Create(outFilePath)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-	file = *newfile
-	file.WriteString("info " + strconv.Itoa(particleCount) + " " + strconv.Itoa(frameCount+1) + "\n")
-	file.WriteString("f " + strconv.Itoa(0) + "\n")
+	createBlockofParticles(mgl64.Vec3{4, 4, 4}, mgl64.Vec3{-30, 4, 4}, mgl64.Vec3{10, 0, 0})
 
-	for i, particle := range particles {
-		file.WriteString("p " + strconv.FormatInt(int64(i), 10) + " " +
-			strconv.FormatFloat(particle.position[0], 'f', -1, 64) + " " +
-			strconv.FormatFloat(particle.position[1], 'f', -1, 64) + " " +
-			strconv.FormatFloat(particle.position[2], 'f', -1, 64) + "\n")
+	createFile(particleCount, frameCount, absPath)
+
+	for _, particle := range particles {
+		writeParticle(particle)
 	}
 
 	fmt.Printf("Simulation contains %d particles.\n", particleCount)
@@ -96,20 +86,13 @@ func UpdateSimulation(frame int) {
 
 	fmt.Printf("Calculating Frame %d of %d. \r", frame, frameCount)
 
-	// Writing Frame number to file
-	file.WriteString("f " + strconv.Itoa(frame) + "\n")
-
 	runInParallel(updateAcceleration)
 	runInParallel(updateVelocity)
 	runInParallel(updatePosition)
 
 	// Writing Particle Pos to file
-	for i, particle := range particles {
-		// Writing pos to file
-		file.WriteString("p " + strconv.FormatInt(int64(i), 10) + " " +
-			strconv.FormatFloat(particle.position[0], 'f', -1, 64) + " " +
-			strconv.FormatFloat(particle.position[1], 'f', -1, 64) + " " +
-			strconv.FormatFloat(particle.position[2], 'f', -1, 64) + "\n")
+	for _, particle := range particles {
+		writeParticle(particle)
 	}
 }
 
