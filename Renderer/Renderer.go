@@ -60,18 +60,37 @@ func SetUpRenderer(absPath string) {
 	counter++
 
 	particles = make([]particle, particleCount)
+	particles[0] = particle{
+		postions: make([]mgl32.Vec3, FrameCount),
+		entityId: of.CreateEntity(),
+	}
+	of.AddComponent(particles[0].entityId, of.ComponentMesh)
+	mesh.Material = of.Material{DiffuseColor: mgl32.Vec3{
+		rand.Float32(),
+		rand.Float32(),
+		rand.Float32(),
+	}}
+	of.SetComponent(particles[0].entityId, of.ComponentMesh, mesh)
+
 	for i := range particles {
+		if i == 0 {
+			continue
+		}
+
 		particles[i] = particle{
 			postions: make([]mgl32.Vec3, FrameCount),
 			entityId: of.CreateEntity(),
 		}
-		of.AddComponent(particles[i].entityId, of.ComponentMesh)
-		mesh.Material = of.Material{DiffuseColor: mgl32.Vec3{
+		meshInstant := of.AddComponent(particles[i].entityId, of.ComponentMeshInstant).(of.MeshInstant)
+
+		meshInstant.OwnEntity = particles[i].entityId
+		meshInstant.MeshEntity = particles[0].entityId
+		meshInstant.Material = of.Material{DiffuseColor: mgl32.Vec3{
 			rand.Float32(),
 			rand.Float32(),
 			rand.Float32(),
 		}}
-		of.SetComponent(particles[i].entityId, of.ComponentMesh, mesh)
+		of.SetComponent(particles[i].entityId, of.ComponentMeshInstant, meshInstant)
 	}
 
 	var frame int
