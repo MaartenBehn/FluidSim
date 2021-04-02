@@ -45,7 +45,8 @@ var FrameCount int
 var particles []particle
 
 func SetUpRenderer(absPath string) {
-	mesh := of.LoadOBJ(absPath+"/mesh/Sphere.obj", false)
+	mesh := of.NewMesh()
+	mesh.LoadOBJ(absPath+"/mesh/Sphere.obj", false)
 
 	content, err := ioutil.ReadFile(inFilePath)
 	if err != nil {
@@ -61,37 +62,33 @@ func SetUpRenderer(absPath string) {
 
 	particles = make([]particle, particleCount)
 	particles[0] = particle{
-		postions: make([]mgl32.Vec3, FrameCount),
-		entityId: of.CreateEntity(),
+		postions:  make([]mgl32.Vec3, FrameCount),
+		transform: mesh.Transform,
 	}
-	of.AddComponent(particles[0].entityId, of.ComponentMesh)
+
 	mesh.Material = of.Material{DiffuseColor: mgl32.Vec3{
 		rand.Float32(),
 		rand.Float32(),
 		rand.Float32(),
 	}}
-	of.SetComponent(particles[0].entityId, of.ComponentMesh, mesh)
 
 	for i := range particles {
 		if i == 0 {
 			continue
 		}
 
-		particles[i] = particle{
-			postions: make([]mgl32.Vec3, FrameCount),
-			entityId: of.CreateEntity(),
-		}
-		meshInstant := of.AddComponent(particles[i].entityId, of.ComponentMeshInstant).(of.MeshInstant)
-
-		meshInstant.OwnEntity = particles[i].entityId
-		meshInstant.MeshEntity = particles[0].entityId
-		meshInstant.Material = of.Material{DiffuseColor: mgl32.Vec3{
+		material := of.Material{DiffuseColor: mgl32.Vec3{
 			rand.Float32(),
 			rand.Float32(),
 			rand.Float32(),
 		}}
-		of.SetComponent(particles[i].entityId, of.ComponentMeshInstant, meshInstant)
+		meshInstant := of.NewMeshInstant(mesh, &material)
+		particles[i] = particle{
+			postions:  make([]mgl32.Vec3, FrameCount),
+			transform: meshInstant.Transform,
+		}
 	}
+	of.GetActiveMeshes().AddMesh(mesh)
 
 	var frame int
 	var index int
@@ -126,8 +123,6 @@ func byteToFloat32(buffer []byte) float32 {
 
 func UpdateRenderer(frame int) {
 	for _, particle := range particles {
-		transform := of.GetComponent(particle.entityId, of.ComponentTransform).(of.Transform)
-		transform.SetPosition(particle.postions[frame].Mul(100))
-		of.SetComponent(particle.entityId, of.ComponentTransform, transform)
+		particle.transform.SetPosition(particle.postions[frame].Mul(100))
 	}
 }

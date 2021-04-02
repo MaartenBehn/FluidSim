@@ -3,7 +3,6 @@ package main
 import (
 	render "FluidSim/Renderer"
 	of "OctaForceEngineGo"
-	"fmt"
 	"github.com/go-gl/mathgl/mgl32"
 	"path/filepath"
 	"runtime"
@@ -18,24 +17,50 @@ func main() {
 	absPath = filepath.Dir(b)
 
 	render.SelectDataFile(absPath)
-	of.StartUp(start, update, stop)
+	of.Init(start)
 }
 
 var camera int
 
 func start() {
-	of.SetMaxFPS(60)
-	of.SetMaxUPS(30)
+	camera := of.NewCamera()
 
-	camera = of.CreateEntity()
-	of.AddComponent(camera, of.ComponentCamera)
-	transform := of.GetComponent(camera, of.ComponentTransform).(of.Transform)
-	transform.SetPosition(mgl32.Vec3{0, 0, 500})
-	of.SetComponent(camera, of.ComponentTransform, transform)
-	of.SetActiveCameraEntity(camera)
+	camera.Transform = of.NewTransform()
+	camera.Transform.SetPosition(mgl32.Vec3{0, 0, 200})
+
+	of.SetActiveCamera(camera)
+
+	task := of.NewTask(func() {
+
+		deltaTime := float32(of.GetDeltaTime())
+		if of.KeyPressed(of.KeyW) {
+			camera.Transform.MoveRelative(mgl32.Vec3{0, 0, -1}.Mul(deltaTime * movementSpeed))
+		}
+		if of.KeyPressed(of.KeyS) {
+			camera.Transform.MoveRelative(mgl32.Vec3{0, 0, 1}.Mul(deltaTime * movementSpeed))
+		}
+		if of.KeyPressed(of.KeyA) {
+			camera.Transform.MoveRelative(mgl32.Vec3{-1, 0, 0}.Mul(deltaTime * movementSpeed))
+		}
+		if of.KeyPressed(of.KeyD) {
+			camera.Transform.MoveRelative(mgl32.Vec3{1, 0, 0}.Mul(deltaTime * movementSpeed))
+		}
+		if of.MouseButtonPressed(of.MouseButtonLeft) {
+			mouseMovement := of.GetMouseMovement()
+			camera.Transform.Rotate(mgl32.Vec3{-1, 0, 0}.Mul(mouseMovement.Y() * deltaTime * mouseSpeed))
+			camera.Transform.Rotate(mgl32.Vec3{0, -1, 0}.Mul(mouseMovement.X() * deltaTime * mouseSpeed))
+		}
+	})
+	task.SetRepeating(true)
+	task.SetRaceTask(of.GetEngineTask(of.WindowUpdateTask), of.GetEngineTask(of.RenderTask))
+	of.AddTask(task)
 
 	render.SetUpRenderer(absPath)
 	render.UpdateRenderer(0)
+
+	task = of.NewTask(update)
+	task.SetRepeating(true)
+	of.AddTask(task)
 }
 
 const (
@@ -46,29 +71,6 @@ const (
 var currentFrame int
 
 func update() {
-	fmt.Printf("FPS: %f UPS: %f \r", of.GetFPS(), of.GetUPS())
-
-	deltaTime := float32(of.GetDeltaTime())
-
-	transform := of.GetComponent(camera, of.ComponentTransform).(of.Transform)
-	if of.KeyPressed(of.KeyW) {
-		transform.MoveRelative(mgl32.Vec3{0, 0, -1}.Mul(deltaTime * movementSpeed))
-	}
-	if of.KeyPressed(of.KeyS) {
-		transform.MoveRelative(mgl32.Vec3{0, 0, 1}.Mul(deltaTime * movementSpeed))
-	}
-	if of.KeyPressed(of.KeyA) {
-		transform.MoveRelative(mgl32.Vec3{-1, 0, 0}.Mul(deltaTime * movementSpeed))
-	}
-	if of.KeyPressed(of.KeyD) {
-		transform.MoveRelative(mgl32.Vec3{1, 0, 0}.Mul(deltaTime * movementSpeed))
-	}
-	if of.MouseButtonPressed(of.MouseButtonLeft) {
-		mouseMovement := of.GetMouseMovement()
-		transform.Rotate(mgl32.Vec3{-1, 0, 0}.Mul(mouseMovement.Y() * deltaTime * mouseSpeed))
-		transform.Rotate(mgl32.Vec3{0, -1, 0}.Mul(mouseMovement.X() * deltaTime * mouseSpeed))
-	}
-	of.SetComponent(camera, of.ComponentTransform, transform)
 
 	if of.KeyPressed(of.KeyQ) {
 		render.UpdateRenderer(currentFrame)
@@ -82,8 +84,4 @@ func update() {
 			currentFrame--
 		}
 	}
-}
-
-func stop() {
-
 }

@@ -1,8 +1,11 @@
 package Renderer
 
-import "github.com/go-gl/mathgl/mgl32"
+import (
+	of "OctaForceEngineGo"
+	"github.com/go-gl/mathgl/mgl32"
+)
 
 type particle struct {
-	postions []mgl32.Vec3
-	entityId int
+	postions  []mgl32.Vec3
+	transform *of.Transform
 }

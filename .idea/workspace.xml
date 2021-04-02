@@ -9,13 +9,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4023e5a1-d193-4623-8bca-ab0cfb3b0698" name="Default Changelist" comment="squash! integrated code from Gibianskys fluid sim project.">
-      <change beforePath="$PROJECT_DIR$/.idea/FluidSim.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FluidSim.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Doku/SIGA2015.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Doku/download.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/imgui.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Renderer/Particle.go" beforeDir="false" afterPath="$PROJECT_DIR$/Renderer/Particle.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Renderer/Renderer.go" beforeDir="false" afterPath="$PROJECT_DIR$/Renderer/Renderer.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Simulation/DataFile.go" beforeDir="false" afterPath="$PROJECT_DIR$/Simulation/DataFile.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Simulation/Kernels.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Simulation/Particle.go" beforeDir="false" afterPath="$PROJECT_DIR$/Simulation/Particle.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Simulation/Simulation.go" beforeDir="false" afterPath="$PROJECT_DIR$/Simulation/Simulation.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/builds/simulationData.bin" beforeDir="false" afterPath="$PROJECT_DIR$/builds/simulationData.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profiling.bat" beforeDir="false" afterPath="$PROJECT_DIR$/profiling.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runRender.go" beforeDir="false" afterPath="$PROJECT_DIR$/runRender.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/runSimulation.go" beforeDir="false" afterPath="$PROJECT_DIR$/runSimulation.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/Main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/Main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/Window.go" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/Window.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/openGL.go" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/openGL.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +79,7 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/builds/simulationData.bin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -78,7 +88,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="goland.project.structure" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="settings.editor.splitter.proportion" value="0.22906156" />
   </component>
   <component name="RecentsManager">
@@ -94,7 +104,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.render">
+  <component name="RunManager" selected="Go Build.simulate and render">
     <configuration name="Profiling" type="BatchConfigurationType" factoryName="Batch" temporary="true">
       <module name="FluidSim" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -365,8 +375,8 @@
       <path value="$PROJECT_DIR$/src/github.com/davecgh/go-spew" />
       <path value="$PROJECT_DIR$/src/github.com/ghostiam/binstruct" />
       <path value="$PROJECT_DIR$/src/github.com/pkg/errors" />
+      <path value="$PROJECT_DIR$/Doku/dieselfluid" />
     </ignored-roots>
-    <MESSAGE value="Fixed OBJ loading bug" />
     <MESSAGE value="vertexColor and materials" />
     <MESSAGE value="Camera Mouse Rotation, Depth test" />
     <MESSAGE value="Multi threating safety and profiling" />
@@ -391,152 +401,9 @@
     <MESSAGE value="Mesh Intsancing" />
     <MESSAGE value="Instancing working properly" />
     <MESSAGE value="bug fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug fix" />
+    <MESSAGE value="using bin files" />
+    <option name="LAST_COMMIT_MESSAGE" value="using bin files" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="752" y="178" key="#GOPATH" timestamp="1600533967915">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="752" y="178" key="#GOPATH/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600533967915" />
-    <state x="2672" y="451" key="#GOROOT" timestamp="1608722003185">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="752" y="451" key="#GOROOT/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600533930757" />
-    <state x="2672" y="451" key="#GOROOT/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1608722003185" />
-    <state x="752" y="353" key="#Go_Modules" timestamp="1601304001558">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="752" y="353" key="#Go_Modules/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601304001558" />
-    <state x="757" y="309" key="#Web_Browsers" timestamp="1600556516372">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="757" y="309" key="#Web_Browsers/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600556516372" />
-    <state x="414" y="175" width="1092" height="764" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601045909535">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="295" y="80" width="777" height="648" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1600771596850" />
-    <state x="414" y="175" width="1092" height="764" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601045909535" />
-    <state x="2641" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608721929768">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="721" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604508058514" />
-    <state x="2641" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1608721929768" />
-    <state x="707" y="375" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1602516050386">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="707" y="375" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602516050386" />
-    <state width="737" height="466" key="DebuggerActiveHint" timestamp="1604586180427">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="737" height="466" key="DebuggerActiveHint/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604586180427" />
-    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1600094150099">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600094150099" />
-    <state x="827" y="295" key="EnvironmentVariablesDialog" timestamp="1601304000792">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="827" y="295" key="EnvironmentVariablesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601304000792" />
-    <state x="2868" y="374" width="424" height="479" key="FileChooserDialogImpl" timestamp="1608721981459">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="901" y="230" width="424" height="479" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1600763451310" />
-    <state x="948" y="374" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606329747846" />
-    <state x="2868" y="374" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1608721981459" />
-    <state x="810" y="420" key="Git.Rebase.Log.Action.NewCommitMessage.Dialog" timestamp="1601321854421">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="810" y="420" key="Git.Rebase.Log.Action.NewCommitMessage.Dialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601321854421" />
-    <state width="1877" height="212" key="GridCell.Tab.0.bottom" timestamp="1604599024525">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1314" height="145" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1600772941568" />
-    <state width="1877" height="212" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604599024525" />
-    <state width="1877" height="217" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600702949266" />
-    <state width="1877" height="212" key="GridCell.Tab.0.center" timestamp="1604599024525">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1314" height="145" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1600772941567" />
-    <state width="1877" height="212" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604599024525" />
-    <state width="1877" height="217" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600702949266" />
-    <state width="1877" height="212" key="GridCell.Tab.0.left" timestamp="1604599024525">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1314" height="145" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1600772941567" />
-    <state width="1877" height="212" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604599024525" />
-    <state width="1877" height="217" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600702949266" />
-    <state width="1877" height="212" key="GridCell.Tab.0.right" timestamp="1604599024525">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1314" height="145" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1600772941567" />
-    <state width="1877" height="212" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604599024525" />
-    <state width="1877" height="217" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600702949266" />
-    <state width="1877" height="407" key="GridCell.Tab.1.bottom" timestamp="1604587151833">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1314" height="271" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1600771602354" />
-    <state width="1877" height="407" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604587151833" />
-    <state width="1877" height="407" key="GridCell.Tab.1.center" timestamp="1604587151833">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1314" height="271" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1600771602354" />
-    <state width="1877" height="407" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604587151833" />
-    <state width="1877" height="407" key="GridCell.Tab.1.left" timestamp="1604587151833">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1314" height="271" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1600771602353" />
-    <state width="1877" height="407" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604587151833" />
-    <state width="1877" height="407" key="GridCell.Tab.1.right" timestamp="1604587151833">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1314" height="271" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1600771602354" />
-    <state width="1877" height="407" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604587151833" />
-    <state x="540" y="255" key="IDE.errors.dialog" timestamp="1602520351227">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="540" y="255" key="IDE.errors.dialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602520351227" />
-    <state x="598" y="281" key="MultipleFileMergeDialog" timestamp="1601133228650">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601133228650" />
-    <state x="475" y="104" key="SettingsEditor" timestamp="1604604982893">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="328" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1600715640662" />
-    <state x="475" y="104" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604604982893" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604598886443">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604598886443" />
-    <state width="968" height="528" key="XDebugger.FullValuePopup" timestamp="1602517386875">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="968" height="528" key="XDebugger.FullValuePopup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602517386875" />
-    <state x="739" y="354" key="com.goide.refactor.extractInterface.GoExtractInterfaceDialog" timestamp="1600868452366">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="739" y="354" key="com.goide.refactor.extractInterface.GoExtractInterfaceDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600868452366" />
-    <state x="734" y="244" key="com.goide.refactor.move.GoMoveDeclarationDialog" timestamp="1600980439675">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="734" y="244" key="com.goide.refactor.move.GoMoveDeclarationDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600980439675" />
-    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600975704775">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600975704775" />
-    <state x="1920" y="239" width="1403" height="791" maximized="true" key="dock-window-1" timestamp="1604521556171">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1920" y="239" width="1403" height="791" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604521556171" />
-    <state x="685" y="149" width="585" height="801" key="find.popup" timestamp="1600707035817">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="685" y="149" width="585" height="801" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600707035817" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1604511005603">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604511005603" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

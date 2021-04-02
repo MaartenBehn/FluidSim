@@ -22,7 +22,7 @@ func createFile(particleCount int, frameCount int, absPath string) {
 	file.Write(bytes)
 }
 
-func writeParticle(particle Particle) {
+func writeParticle(particle *Particle) {
 
 	bytes := float32ToByte(float32(particle.position[0]))
 	bytes = append(bytes, float32ToByte(float32(particle.position[1]))...)
