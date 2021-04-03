@@ -23,17 +23,20 @@ func SelectDataFile(absPath string) {
 
 	lines := strings.Split(string(content), "\r\n")
 
-	fmt.Print("Found data files are: \n")
-	for i, line := range lines {
-		fmt.Printf("%d: %s \n", i, line)
-	}
-	fmt.Print("Please type in the desired data file number to play the file: \n")
-	reader := bufio.NewReader(os.Stdin)
-	input, _ := reader.ReadString('\n')
-	input = strings.Replace(input, "\n", "", 1)
-	index := of.ParseInt(input)
-	if index < 0 || index > len(lines) {
-		index = 0
+	var index = 0
+	if len(lines) > 1 {
+		fmt.Print("Found data files are: \n")
+		for i, line := range lines {
+			fmt.Printf("%d: %s \n", i, line)
+		}
+		fmt.Print("Please type in the desired data file number to play the file: \n")
+		reader := bufio.NewReader(os.Stdin)
+		input, _ := reader.ReadString('\n')
+		input = strings.Replace(input, "\n", "", 1)
+		index = of.ParseInt(input)
+		if index < 0 || index > len(lines) {
+			index = 0
+		}
 	}
 
 	inFilePath = absPath + "/builds/" + lines[index] + ".bin"

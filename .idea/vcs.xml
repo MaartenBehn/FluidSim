@@ -2,9 +2,6 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Doku/Fluid-Simulation-SPH" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Doku/SPH-3D-Fluid-Simulation" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Doku/SPH-Tutorial" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../OctaForceEngineGo" vcs="Git" />
   </component>
 </project>

@@ -18,9 +18,16 @@ const (
 	cm = m / 100.0
 	g  = 1.0 // grams
 	kg = 1000 * g
+	s  = 1.0
 
-	particleRadius = 1 * cm
-	spacing        = particleRadius * 2
+	dt = 1.0 / 25 * s
+
+	particleRadius = 1.0 * cm
+	spacing        = particleRadius * 2.0
+
+	Ke          = 100000 * dt
+	Kg          = 0.1 * dt
+	maxVelocity = 10 * cm
 )
 
 var (
@@ -35,15 +42,15 @@ func SetUpSimulation(_frameCount int, absPath string) {
 
 	particles = make([]*Particle, 0)
 
-	createBlockofParticles(mgl64.Vec3{20 * cm, 20 * cm, 20 * cm}, mgl64.Vec3{}, mgl64.Vec3{})
+	createBlockofParticles(mgl64.Vec3{15 * cm, 5 * cm, 10 * cm}, mgl64.Vec3{}, mgl64.Vec3{})
 
 	createFile(particleCount, frameCount, absPath)
 
 	for _, particle := range particles {
 		particle.calcOutside()
-		if particle.outside {
-			particle.position = particle.position.Add(mgl64.Vec3{30 * cm, 30 * cm, 30 * cm})
-		}
+	}
+
+	for _, particle := range particles {
 
 		writeParticle(particle)
 	}
@@ -61,7 +68,6 @@ func createBlockofParticles(size mgl64.Vec3, position mgl64.Vec3, velocity mgl64
 
 				particle := Particle{
 					position: mgl64.Vec3{x + position[0] - (size[0] / 2), y + position[1] - (size[0] / 2), z + position[2] - (size[0] / 2)},
-					velocity: mgl64.Vec3{velocity[0], velocity[1], velocity[2]},
 				}
 
 				particles = append(particles, &particle)
@@ -75,6 +81,10 @@ func UpdateSimulation(frame int) {
 	frame++
 
 	fmt.Printf("Calculating Frame %d of %d. \r", frame, frameCount)
+
+	runInParallel((*Particle).calcOutside)
+	runInParallel((*Particle).calcAcceleration)
+	runInParallel((*Particle).calcPosition)
 
 	// Writing Particle Pos to file
 	for _, particle := range particles {
