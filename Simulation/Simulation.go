@@ -1,4 +1,4 @@
-package Simulation
+package main
 
 import (
 	"fmt"
@@ -9,9 +9,10 @@ import (
 
 var outFilePath string
 var file os.File
+var frameCount int
 
 var particles []*Particle
-var frameCount int
+var drops []*Drop
 
 const (
 	m  = 1.0
@@ -24,35 +25,40 @@ const (
 
 	particleRadius = 1.0 * cm
 	spacing        = particleRadius * 4.0
+	radiusFactor   = 0.01
+	mergeFactor    = 0.7
 
-	springNeigborMaxDist = spacing * 2
-	springNeigborMinDist = spacing * 1.1
-	springRestingLenght  = spacing
-	springStiffness      = 0.1
-	springDampingFactor  = 0.001
+	springStiffness     = 0.01
+	springDampingFactor = 0.001
 )
 
 var (
 	particleCount = 0
 )
 
-func SetUpSimulation(_frameCount int, absPath string) {
+func main() {
+	run()
+}
+func run() {
+	frameCount = 500
+
+	SetUpSimulation()
+
+	for i := 0; i < frameCount; i++ {
+		UpdateSimulation(i)
+	}
+	EndSimulation()
+}
+
+func SetUpSimulation() {
 
 	fmt.Println("Starting simulation...")
 
-	frameCount = _frameCount
-
-	particles = make([]*Particle, 0)
-
 	createBlockofParticles(mgl64.Vec3{30 * cm, 30 * cm, 30 * cm}, mgl64.Vec3{}, mgl64.Vec3{0, 0, 0})
 
-	createBlockofParticles(mgl64.Vec3{10 * cm, 10 * cm, 10 * cm}, mgl64.Vec3{50 * cm, 0, 0}, mgl64.Vec3{-10 * cm, 0, 0})
+	createBlockofParticles(mgl64.Vec3{10 * cm, 10 * cm, 10 * cm}, mgl64.Vec3{200 * cm, 0, 0}, mgl64.Vec3{-50 * cm, 0, 0})
 
-	createFile(particleCount, frameCount, absPath)
-
-	for _, particle := range particles {
-		particle.calcSpringNeigbors()
-	}
+	createFile(particleCount, frameCount)
 
 	for _, particle := range particles {
 
@@ -64,23 +70,28 @@ func SetUpSimulation(_frameCount int, absPath string) {
 }
 
 func createBlockofParticles(size mgl64.Vec3, position mgl64.Vec3, velocity mgl64.Vec3) {
+	drop := &Drop{}
+
 	for x := 0.0; x < size[0]; x += spacing * 0.8 {
 		for y := 0.0; y < size[1]; y += spacing * 0.8 {
 			for z := 0.0; z < size[2]; z += spacing * 0.8 {
 
 				fmt.Printf("Creating particle %d. \r", particleCount)
 
-				particle := Particle{
+				particle := &Particle{
 					position: mgl64.Vec3{x + position[0] - (size[0] / 2), y + position[1] - (size[0] / 2), z + position[2] - (size[0] / 2)},
 					velocity: mgl64.Vec3{velocity[0], velocity[1], velocity[2]},
 					mass:     1,
+					drop:     drop,
 				}
+				drop.particles = append(drop.particles, particle)
 
-				particles = append(particles, &particle)
+				particles = append(particles, particle)
 				particleCount++
 			}
 		}
 	}
+	drops = append(drops, drop)
 }
 
 func UpdateSimulation(frame int) {
@@ -88,7 +99,16 @@ func UpdateSimulation(frame int) {
 
 	fmt.Printf("Calculating Frame %d of %d. \r", frame, frameCount)
 
-	runInParallel((*Particle).calcSpringNeigbors)
+	for _, drop := range drops {
+		drop.calcPosition()
+	}
+	for i := len(drops) - 1; i >= 0; i-- {
+		drops[i].checkDrop()
+	}
+	for _, drop := range drops {
+		drop.calcDropRadius()
+	}
+
 	runInParallel((*Particle).calcForce)
 	runInParallel((*Particle).calcVelocity)
 	runInParallel((*Particle).calcPosition)

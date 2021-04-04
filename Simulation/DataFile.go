@@ -1,16 +1,23 @@
-package Simulation
+package main
 
 import (
 	"encoding/binary"
 	"fmt"
 	"math"
 	"os"
+	"path"
+	"runtime"
 )
 
-func createFile(particleCount int, frameCount int, absPath string) {
+func createFile(particleCount int, frameCount int) {
 
-	outFilePath = absPath + "/builds/simulationData.bin"
-	newfile, err := os.Create(outFilePath)
+	_, b, _, _ := runtime.Caller(0)
+	dir, err := os.Open(path.Join(b, "../../"))
+	if err != nil {
+		panic(err)
+	}
+
+	newfile, err := os.Create(dir.Name() + "/builds/simulationData.bin")
 	if err != nil {
 		fmt.Println(err)
 		return

@@ -1,4 +1,4 @@
-package Renderer
+package main
 
 import (
 	of "OctaForceEngineGo"

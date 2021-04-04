@@ -9,11 +9,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74d8532e-1713-4e95-a0b6-8a03dc86e275" name="Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Simulation/Drop.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Simulation/Simulation_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Simulation/World.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Renderer/Particle.go" beforeDir="false" afterPath="$PROJECT_DIR$/Renderer/Particle.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Renderer/Renderer.go" beforeDir="false" afterPath="$PROJECT_DIR$/Renderer/Renderer.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Simulation/DataFile.go" beforeDir="false" afterPath="$PROJECT_DIR$/Simulation/DataFile.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Simulation/Particle.go" beforeDir="false" afterPath="$PROJECT_DIR$/Simulation/Particle.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Simulation/Simulation.go" beforeDir="false" afterPath="$PROJECT_DIR$/Simulation/Simulation.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/builds/simulationData.bin" beforeDir="false" afterPath="$PROJECT_DIR$/builds/simulationData.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runSimulation.go" beforeDir="false" afterPath="$PROJECT_DIR$/runSimulation.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runRender.go" beforeDir="false" afterPath="$PROJECT_DIR$/Renderer/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runSimulation.go" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/meshInstant.go" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/meshInstant.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/openGL.go" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/openGL.go" afterDir="false" />
     </list>
@@ -69,7 +76,7 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Simulation" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -82,16 +89,16 @@
     <property name="settings.editor.splitter.proportion" value="0.22906156" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="H:\dev\Go\src\OctaForceEngineGo" />
-      <recent name="H:\dev\Go\src\FluidSim\builds" />
-      <recent name="H:\dev\Go\src\FluidSim" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/Renderer" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="H:\dev\Go\src\FluidSim\Simulation" />
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Simulation" />
+      <recent name="$PROJECT_DIR$/Renderer" />
+      <recent name="$PROJECT_DIR$/Simulation/main" />
+      <recent name="$PROJECT_DIR$/Renderer/main" />
+      <recent name="H:\dev\Go\src\OctaForceEngineGo" />
     </key>
   </component>
   <component name="RunManager" selected="Go Build.simulate and render">
@@ -115,29 +122,40 @@
     </configuration>
     <configuration name="render" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="FluidSim" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/runRender.go" />
-      <directory value="$PROJECT_DIR$" />
+      <working_directory value="$PROJECT_DIR$/Renderer" />
+      <kind value="DIRECTORY" />
+      <filePath value="$PROJECT_DIR$/Renderer/main.go" />
+      <directory value="$PROJECT_DIR$/Renderer" />
       <method v="2" />
     </configuration>
     <configuration name="simulate and render" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="FluidSim" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/runRender.go" />
-      <directory value="$PROJECT_DIR$" />
+      <working_directory value="$PROJECT_DIR$/Renderer" />
+      <kind value="DIRECTORY" />
+      <filePath value="$PROJECT_DIR$/Renderer" />
+      <directory value="$PROJECT_DIR$/Renderer" />
       <method v="2">
         <option name="RunConfigurationTask" enabled="true" run_configuration_name="simulate" run_configuration_type="GoApplicationRunConfiguration" />
       </method>
     </configuration>
     <configuration name="simulate" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="FluidSim" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/runSimulation.go" />
+      <working_directory value="$PROJECT_DIR$/Simulation" />
+      <kind value="DIRECTORY" />
+      <filePath value="$PROJECT_DIR$/Simulation/Simulation.go" />
       <package value="FluidSim" />
+      <directory value="$PROJECT_DIR$/Simulation" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test in FluidSim/Simulation" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="FluidSim" />
+      <working_directory value="$PROJECT_DIR$/Simulation" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="FluidSim/Simulation" />
       <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <pattern value="^\QTest\E$" />
       <method v="2" />
     </configuration>
     <list>
@@ -145,7 +163,13 @@
       <item itemvalue="Go Build.simulate and render" />
       <item itemvalue="Go Build.render" />
       <item itemvalue="Go Build.simulate" />
+      <item itemvalue="Go Test.Test in FluidSim/Simulation" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Test.Test in FluidSim/Simulation" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -363,7 +387,6 @@
       <path value="$PROJECT_DIR$/Doku/SPH-3D-Fluid-Simulation" />
       <path value="$PROJECT_DIR$/Doku/SPH-Tutorial" />
     </ignored-roots>
-    <MESSAGE value="FPS, UPS Bug Fixes" />
     <MESSAGE value="Simple Newton Gravity Simulation" />
     <MESSAGE value="Changing Frames with 1 and 2" />
     <MESSAGE value="Elastic collision system" />
@@ -388,7 +411,8 @@
     <MESSAGE value="backup" />
     <MESSAGE value="Pefecnt ball" />
     <MESSAGE value="changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="changes" />
+    <MESSAGE value="SoftBody" />
+    <option name="LAST_COMMIT_MESSAGE" value="SoftBody" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
