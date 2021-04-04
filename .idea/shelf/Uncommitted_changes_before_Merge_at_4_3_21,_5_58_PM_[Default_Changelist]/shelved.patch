@@ -1,0 +1,457 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"BranchesTreeState\">\n    <expand>\n      <path>\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"LOCAL_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n      </path>\n      <path>\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n      </path>\n      <path>\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"GROUP_NODE:origin\" type=\"e8cecc67:BranchNodeDescriptor\" />\n      </path>\n    </expand>\n    <select>\n      <path>\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"LOCAL_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\n        <item name=\"BRANCH:master\" type=\"e8cecc67:BranchNodeDescriptor\" />\n      </path>\n    </select>\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"4023e5a1-d193-4623-8bca-ab0cfb3b0698\" name=\"Default Changelist\" comment=\"\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Simulation/Particle.go\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Simulation/Particle.go\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Simulation/Simulation.go\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Simulation/Simulation.go\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/runSimulation.go\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/runSimulation.go\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"ChangesViewManager\">\n    <option name=\"groupingKeys\">\n      <option value=\"repository\" />\n    </option>\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Go File\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"GOROOT\" path=\"$PROJECT_DIR$/../../../../Program Files/Go\" />\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"f331e19633c695371f030eee9a85b8d3c7430eec\" />\n        <entry key=\"$PROJECT_DIR$/../OctaForceEngineGo\" value=\"master\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n    <option name=\"RESET_MODE\" value=\"HARD\" />\n    <option name=\"ROOT_SYNC\" value=\"SYNC\" />\n    <option name=\"UPDATE_TYPE\" value=\"REBASE\" />\n  </component>\n  <component name=\"GoLibraries\">\n    <option name=\"urls\">\n      <list>\n        <option value=\"file://$PROJECT_DIR$\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"ProjectId\" id=\"1hHb5viyEno9HVgnXJnzz0sOjeJ\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">\n    <property name=\"ASKED_ADD_EXTERNAL_FILES\" value=\"true\" />\n    <property name=\"DefaultGoTemplateProperty\" value=\"Go File\" />\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\n    <property name=\"TODO_SCOPE\" value=\"All Places\" />\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\n    <property name=\"configurable.Global.GOPATH.is.expanded\" value=\"true\" />\n    <property name=\"configurable.Module.GOPATH.is.expanded\" value=\"true\" />\n    <property name=\"configurable.Project.GOPATH.is.expanded\" value=\"true\" />\n    <property name=\"go.import.settings.migrated\" value=\"true\" />\n    <property name=\"go.sdk.automatically.set\" value=\"true\" />\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/runRender.go\" />\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\n    <property name=\"node.js.detected.package.tslint\" value=\"true\" />\n    <property name=\"node.js.path.for.package.eslint\" value=\"project\" />\n    <property name=\"node.js.path.for.package.tslint\" value=\"project\" />\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\n    <property name=\"node.js.selected.package.tslint\" value=\"(autodetect)\" />\n    <property name=\"restartRequiresConfirmation\" value=\"false\" />\n    <property name=\"settings.editor.selected.configurable\" value=\"preferences.editor\" />\n    <property name=\"settings.editor.splitter.proportion\" value=\"0.22906156\" />\n  </component>\n  <component name=\"RecentsManager\">\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"H:\\dev\\Go\\src\\FluidSim\\builds\" />\n      <recent name=\"$PROJECT_DIR$\" />\n      <recent name=\"$PROJECT_DIR$/Renderer\" />\n      <recent name=\"$PROJECT_DIR$/Simulation\" />\n      <recent name=\"H:\\dev\\Go\\src\\FluidSim\\FluidSim\" />\n    </key>\n    <key name=\"CopyFile.RECENT_KEYS\">\n      <recent name=\"$PROJECT_DIR$\" />\n    </key>\n  </component>\n  <component name=\"RunManager\" selected=\"Go Build.simulate and render\">\n    <configuration name=\"Profiling\" type=\"BatchConfigurationType\" factoryName=\"Batch\" temporary=\"true\">\n      <module name=\"FluidSim\" />\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\n      <option name=\"WORKING_DIRECTORY\" value=\"H:\\dev\\Go\\src\\FluidSim\" />\n      <option name=\"PARENT_ENVS\" value=\"true\" />\n      <option name=\"SCRIPT_NAME\" value=\"Profiling.bat\" />\n      <option name=\"PARAMETERS\" value=\"\" />\n      <method v=\"2\" />\n    </configuration>\n    <configuration default=\"true\" type=\"GoApplicationRunConfiguration\" factoryName=\"Go Application\">\n      <module name=\"FluidSim\" />\n      <working_directory value=\"$PROJECT_DIR$\" />\n      <go_parameters value=\"-i\" />\n      <kind value=\"FILE\" />\n      <filePath value=\"$PROJECT_DIR$/../FluidSim|$PROJECT_DIR$/main.go\" />\n      <directory value=\"$PROJECT_DIR$\" />\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"render\" type=\"GoApplicationRunConfiguration\" factoryName=\"Go Application\">\n      <module name=\"FluidSim\" />\n      <working_directory value=\"$PROJECT_DIR$\" />\n      <go_parameters value=\"-i\" />\n      <kind value=\"FILE\" />\n      <filePath value=\"$PROJECT_DIR$/runRender.go\" />\n      <directory value=\"$PROJECT_DIR$\" />\n      <method v=\"2\" />\n    </configuration>\n    <configuration name=\"simulate and render\" type=\"GoApplicationRunConfiguration\" factoryName=\"Go Application\">\n      <module name=\"FluidSim\" />\n      <working_directory value=\"$PROJECT_DIR$\" />\n      <go_parameters value=\"-i\" />\n      <kind value=\"FILE\" />\n      <filePath value=\"$PROJECT_DIR$/runRender.go\" />\n      <directory value=\"$PROJECT_DIR$\" />\n      <method v=\"2\">\n        <option name=\"RunConfigurationTask\" enabled=\"true\" run_configuration_name=\"simulate\" run_configuration_type=\"GoApplicationRunConfiguration\" />\n      </method>\n    </configuration>\n    <configuration name=\"simulate\" type=\"GoApplicationRunConfiguration\" factoryName=\"Go Application\">\n      <module name=\"FluidSim\" />\n      <working_directory value=\"$PROJECT_DIR$\" />\n      <kind value=\"FILE\" />\n      <filePath value=\"$PROJECT_DIR$/runSimulation.go\" />\n      <package value=\"FluidSim\" />\n      <directory value=\"$PROJECT_DIR$\" />\n      <method v=\"2\" />\n    </configuration>\n    <list>\n      <item itemvalue=\"Batch.Profiling\" />\n      <item itemvalue=\"Go Build.simulate and render\" />\n      <item itemvalue=\"Go Build.render\" />\n      <item itemvalue=\"Go Build.simulate\" />\n    </list>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"4023e5a1-d193-4623-8bca-ab0cfb3b0698\" name=\"Default Changelist\" comment=\"\" />\n      <created>1600533813993</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1600533813993</updated>\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"Multi threating safety and profiling\">\n      <created>1600556255854</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1600556255854</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"FPS, UPS Bug Fixes\">\n      <created>1600708987659</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1600708987659</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"Simple Newton Gravity Simulation\">\n      <created>1600709016737</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1600709016737</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"Changing Frames with 1 and 2\">\n      <created>1600793087940</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1600793087940</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"Elastic collision system\">\n      <created>1600805265077</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1600805265077</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"Using Q and E for frame change\">\n      <created>1600805849231</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1600805849231</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"some Collision and Fluid stuff\">\n      <created>1600887552096</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1600887552096</updated>\n    </task>\n    <task id=\"LOCAL-00008\" summary=\"elastic- and plastic Collision\">\n      <created>1600893644145</created>\n      <option name=\"number\" value=\"00008\" />\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1600893644145</updated>\n    </task>\n    <task id=\"LOCAL-00009\" summary=\"W Functions\">\n      <created>1600957550094</created>\n      <option name=\"number\" value=\"00009\" />\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1600957550094</updated>\n    </task>\n    <task id=\"LOCAL-00010\" summary=\"Deleted all fluidstuff and created proper particle functions calls\">\n      <created>1600980464860</created>\n      <option name=\"number\" value=\"00010\" />\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1600980464860</updated>\n    </task>\n    <task id=\"LOCAL-00011\" summary=\"new Kernel functions I kinda understand them\">\n      <created>1600982275839</created>\n      <option name=\"number\" value=\"00011\" />\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1600982275839</updated>\n    </task>\n    <task id=\"LOCAL-00012\" summary=\"I think Pressure is Working\">\n      <created>1601048092975</created>\n      <option name=\"number\" value=\"00012\" />\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1601048092975</updated>\n    </task>\n    <task id=\"LOCAL-00013\" summary=\"Bla Curvature Force geht zawr nich aber hier für die Ewigkeit\">\n      <created>1601133166614</created>\n      <option name=\"number\" value=\"00013\" />\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1601133166614</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"14\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"UnknownFeatures\">\n    <option featureType=\"com.intellij.fileTypeFactory\" implementationName=\"*.obj\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State>\n              <option name=\"CUSTOM_BOOLEAN_PROPERTIES\">\n                <map>\n                  <entry key=\"Show.Git.Branches\" value=\"true\" />\n                </map>\n              </option>\n              <option name=\"FILTERS\">\n                <map>\n                  <entry key=\"branch\">\n                    <value>\n                      <list>\n                        <option value=\"master\" />\n                      </list>\n                    </value>\n                  </entry>\n                </map>\n              </option>\n            </State>\n          </value>\n        </entry>\n      </map>\n    </option>\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <option name=\"CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT\" value=\"false\" />\n    <option name=\"CHECK_NEW_TODO\" value=\"false\" />\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\n    <MESSAGE value=\"Mesh Component system\" />\n    <MESSAGE value=\"Cleaned Up Renderer\" />\n    <MESSAGE value=\"Moving of Meshes with Transform\" />\n    <MESSAGE value=\"Rendering Two Meshes\" />\n    <MESSAGE value=\"Change VBO every frame\" />\n    <MESSAGE value=\"Doing so commenting, but do not worry. &#10;I only comment the exposed API the rest will still be magic. &#10;You know the drill: Frontend -&gt; magic -&gt; crappy external package calls.\" />\n    <MESSAGE value=\"Commenting some shit. But dont worry only the expoesd API. Rest still be magic.\" />\n    <MESSAGE value=\"No Warnings\" />\n    <MESSAGE value=\"Input system camera keyboard movement\" />\n    <MESSAGE value=\"Fixed OBJ loading bug\" />\n    <MESSAGE value=\"vertexColor and materials\" />\n    <MESSAGE value=\"Camera Mouse Rotation, Depth test\" />\n    <MESSAGE value=\"Multi threating safety and profiling\" />\n    <MESSAGE value=\"FPS, UPS Bug Fixes\" />\n    <MESSAGE value=\"Simple Newton Gravity Simulation\" />\n    <MESSAGE value=\"Changing Frames with 1 and 2\" />\n    <MESSAGE value=\"Elastic collision system\" />\n    <MESSAGE value=\"Using Q and E for frame change\" />\n    <MESSAGE value=\"some Collision and Fluid stuff\" />\n    <MESSAGE value=\"elastic- and plastic Collision\" />\n    <MESSAGE value=\"W Functions\" />\n    <MESSAGE value=\"Deleted all fluidstuff and created proper particle functions calls\" />\n    <MESSAGE value=\"new Kernel functions I kinda understand them\" />\n    <MESSAGE value=\"I think Pressure is Working\" />\n    <MESSAGE value=\"Bla Curvature Force geht zawr nich aber hier für die Ewigkeit\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Bla Curvature Force geht zawr nich aber hier für die Ewigkeit\" />\n    <option name=\"OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT\" value=\"true\" />\n  </component>\n  <component name=\"WindowStateProjectService\">\n    <state x=\"552\" y=\"178\" key=\"#Deployment\" timestamp=\"1599926172704\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\n    </state>\n    <state x=\"552\" y=\"178\" key=\"#Deployment/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1599926172704\" />\n    <state x=\"752\" y=\"178\" key=\"#GOPATH\" timestamp=\"1600533967915\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\n    </state>\n    <state x=\"752\" y=\"178\" key=\"#GOPATH/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1600533967915\" />\n    <state x=\"752\" y=\"451\" key=\"#GOROOT\" timestamp=\"1600533930757\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\n    </state>\n    <state x=\"752\" y=\"451\" key=\"#GOROOT/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1600533930757\" />\n    <state x=\"757\" y=\"309\" key=\"#Web_Browsers\" timestamp=\"1600556516372\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\n    </state>\n    <state x=\"757\" y=\"309\" key=\"#Web_Browsers/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1600556516372\" />\n    <state x=\"414\" y=\"175\" width=\"1092\" height=\"764\" key=\"#com.intellij.execution.impl.EditConfigurationsDialog\" timestamp=\"1601045909535\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\n    </state>\n    <state x=\"295\" y=\"80\" width=\"777\" height=\"648\" key=\"#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728\" timestamp=\"1600771596850\" />\n    <state x=\"414\" y=\"175\" width=\"1092\" height=\"764\" key=\"#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1601045909535\" />\n    <state x=\"721\" y=\"322\" key=\"#com.intellij.fileTypes.FileTypeChooser\" timestamp=\"1600699803281\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\n    </state>\n    <state x=\"721\" y=\"322\" key=\"#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1600699803281\" />\n    <state x=\"871\" y=\"273\" width=\"841\" height=\"494\" key=\"#xdebugger.XInspectDialog\" timestamp=\"1599934417857\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\n    </state>\n    <state x=\"871\" y=\"273\" width=\"841\" height=\"494\" key=\"#xdebugger.XInspectDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1599934417857\" />\n    <state x=\"537\" y=\"86\" key=\"CommitChangelistDialog2\" timestamp=\"1599926035236\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\n    </state>\n    <state x=\"537\" y=\"86\" key=\"CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1599926035236\" />\n    <state width=\"737\" height=\"466\" key=\"DebuggerActiveHint\" timestamp=\"1601131753943\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\n    </state>\n    <state width=\"737\" height=\"466\" key=\"DebuggerActiveHint/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1601131753943\" />\n    <state width=\"701\" height=\"466\" key=\"DebuggerActiveHint/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040\" timestamp=\"1599774039565\" />\n    <state x=\"92\" y=\"92\" width=\"1736\" height=\"856\" key=\"DiffContextDialog\" timestamp=\"1600094150099\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\n    </state>\n    <state x=\"92\" y=\"92\" width=\"1736\" height=\"856\" key=\"DiffContextDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1600094150099\" />\n    <state x=\"827\" y=\"295\" key=\"EnvironmentVariablesDialog\" timestamp=\"1600870768969\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\n    </state>\n    <state x=\"827\" y=\"295\" key=\"EnvironmentVariablesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1600870768969\" />\n    <state x=\"1267\" y=\"328\" width=\"424\" height=\"479\" key=\"FileChooserDialogImpl\" timestamp=\"1600870934479\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\n    </state>\n    <state x=\"901\" y=\"230\" width=\"424\" height=\"479\" key=\"FileChooserDialogImpl/0.0.1366.728@0.0.1366.728\" timestamp=\"1600763451310\" />\n    <state x=\"1267\" y=\"328\" key=\"FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1600870934479\" />\n    <state width=\"1877\" height=\"152\" key=\"GridCell.Tab.0.bottom\" timestamp=\"1601136747842\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\n    </state>\n    <state width=\"1314\" height=\"145\" key=\"GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728\" timestamp=\"1600772941568\" />\n    <state width=\"1877\" height=\"152\" key=\"GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1601136747842\" />\n    <state width=\"1877\" height=\"217\" key=\"GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040\" timestamp=\"1600702949266\" />\n    <state width=\"1877\" height=\"152\" key=\"GridCell.Tab.0.center\" timestamp=\"1601136747841\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\n    </state>\n    <state width=\"1314\" height=\"145\" key=\"GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728\" timestamp=\"1600772941567\" />\n    <state width=\"1877\" height=\"152\" key=\"GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1601136747841\" />\n    <state width=\"1877\" height=\"217\" key=\"GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040\" timestamp=\"1600702949266\" />\n    <state width=\"1877\" height=\"152\" key=\"GridCell.Tab.0.left\" timestamp=\"1601136747841\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\n    </state>\n    <state width=\"1314\" height=\"145\" key=\"GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728\" timestamp=\"1600772941567\" />\n    <state width=\"1877\" height=\"152\" key=\"GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1601136747841\" />\n    <state width=\"1877\" height=\"217\" key=\"GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040\" timestamp=\"1600702949266\" />\n    <state width=\"1877\" height=\"152\" key=\"GridCell.Tab.0.right\" timestamp=\"1601136747841\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\n    </state>\n    <state width=\"1314\" height=\"145\" key=\"GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728\" timestamp=\"1600772941567\" />\n    <state width=\"1877\" height=\"152\" key=\"GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1601136747841\" />\n    <state width=\"1877\" height=\"217\" key=\"GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040\" timestamp=\"1600702949266\" />\n    <state width=\"1877\" height=\"309\" key=\"GridCell.Tab.1.bottom\" timestamp=\"1601136735717\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\n    </state>\n    <state width=\"1314\" height=\"271\" key=\"GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728\" timestamp=\"1600771602354\" />\n    <state width=\"1877\" height=\"309\" key=\"GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1601136735717\" />\n    <state width=\"1877\" height=\"97\" key=\"GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040\" timestamp=\"1599774423139\" />\n    <state width=\"1877\" height=\"309\" key=\"GridCell.Tab.1.center\" timestamp=\"1601136735717\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\n    </state>\n    <state width=\"1314\" height=\"271\" key=\"GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728\" timestamp=\"1600771602354\" />\n    <state width=\"1877\" height=\"309\" key=\"GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1601136735717\" />\n    <state width=\"1877\" height=\"97\" key=\"GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040\" timestamp=\"1599774423139\" />\n    <state width=\"1877\" height=\"309\" key=\"GridCell.Tab.1.left\" timestamp=\"1601136735717\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\n    </state>\n    <state width=\"1314\" height=\"271\" key=\"GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728\" timestamp=\"1600771602353\" />\n    <state width=\"1877\" height=\"309\" key=\"GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1601136735717\" />\n    <state width=\"1877\" height=\"97\" key=\"GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040\" timestamp=\"1599774423139\" />\n    <state width=\"1877\" height=\"309\" key=\"GridCell.Tab.1.right\" timestamp=\"1601136735717\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\n    </state>\n    <state width=\"1314\" height=\"271\" key=\"GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728\" timestamp=\"1600771602354\" />\n    <state width=\"1877\" height=\"309\" key=\"GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1601136735717\" />\n    <state width=\"1877\" height=\"97\" key=\"GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040\" timestamp=\"1599774423139\" />\n    <state x=\"598\" y=\"281\" key=\"MultipleFileMergeDialog\" timestamp=\"1601133228650\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\n    </state>\n    <state x=\"598\" y=\"281\" key=\"MultipleFileMergeDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1601133228650\" />\n    <state x=\"811\" y=\"222\" key=\"RollbackChangesDialog\" timestamp=\"1599939989104\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\n    </state>\n    <state x=\"811\" y=\"222\" key=\"RollbackChangesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1599939989104\" />\n    <state x=\"461\" y=\"165\" key=\"SettingsEditor\" timestamp=\"1601058057188\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\n    </state>\n    <state x=\"328\" y=\"0\" key=\"SettingsEditor/0.0.1366.728@0.0.1366.728\" timestamp=\"1600715640662\" />\n    <state x=\"461\" y=\"165\" key=\"SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1601058057188\" />\n    <state x=\"807\" y=\"435\" key=\"VCS.ChangelistChooser\" timestamp=\"1599926039217\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\n    </state>\n    <state x=\"807\" y=\"435\" key=\"VCS.ChangelistChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1599926039217\" />\n    <state x=\"552\" y=\"253\" key=\"Vcs.Push.Dialog.v2\" timestamp=\"1601133240539\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\n    </state>\n    <state x=\"552\" y=\"253\" key=\"Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1601133240539\" />\n    <state width=\"968\" height=\"528\" key=\"XDebugger.FullValuePopup\" timestamp=\"1599934411083\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\n    </state>\n    <state width=\"968\" height=\"528\" key=\"XDebugger.FullValuePopup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1599934411083\" />\n    <state x=\"739\" y=\"354\" key=\"com.goide.refactor.extractInterface.GoExtractInterfaceDialog\" timestamp=\"1600868452366\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\n    </state>\n    <state x=\"739\" y=\"354\" key=\"com.goide.refactor.extractInterface.GoExtractInterfaceDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1600868452366\" />\n    <state x=\"734\" y=\"244\" key=\"com.goide.refactor.move.GoMoveDeclarationDialog\" timestamp=\"1600980439675\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\n    </state>\n    <state x=\"734\" y=\"244\" key=\"com.goide.refactor.move.GoMoveDeclarationDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1600980439675\" />\n    <state x=\"92\" y=\"92\" width=\"1736\" height=\"856\" key=\"com.intellij.history.integration.ui.views.DirectoryHistoryDialog\" timestamp=\"1599776970575\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\n    </state>\n    <state x=\"92\" y=\"92\" width=\"1736\" height=\"856\" key=\"com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1599776970575\" />\n    <state x=\"777\" y=\"434\" key=\"com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2\" timestamp=\"1600975704775\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\n    </state>\n    <state x=\"777\" y=\"434\" key=\"com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1600975704775\" />\n    <state x=\"685\" y=\"149\" width=\"585\" height=\"801\" key=\"find.popup\" timestamp=\"1600707035817\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\n    </state>\n    <state x=\"685\" y=\"149\" width=\"585\" height=\"801\" key=\"find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1600707035817\" />\n    <state x=\"803\" y=\"281\" key=\"refactoring.ChangeSignatureDialog\" timestamp=\"1599944208527\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\n    </state>\n    <state x=\"803\" y=\"281\" key=\"refactoring.ChangeSignatureDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1599944208527\" />\n    <state x=\"623\" y=\"225\" width=\"672\" height=\"678\" key=\"search.everywhere.popup\" timestamp=\"1601120376923\">\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\n    </state>\n    <state x=\"623\" y=\"225\" width=\"672\" height=\"678\" key=\"search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040\" timestamp=\"1601120376923\" />\n  </component>\n  <component name=\"XDebuggerManager\">\n    <breakpoint-manager>\n      <breakpoints>\n        <line-breakpoint enabled=\"true\" type=\"DlvLineBreakpoint\">\n          <url>file://$PROJECT_DIR$/Simulation/Particle.go</url>\n          <line>92</line>\n          <option name=\"timeStamp\" value=\"28\" />\n        </line-breakpoint>\n      </breakpoints>\n      <default-breakpoints>\n        <breakpoint type=\"DlvErrorBreakpoint\" />\n      </default-breakpoints>\n    </breakpoint-manager>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 71602e51434706de1547a08aaa9ab5294976b2b9)
++++ b/.idea/workspace.xml	(date 1617465497891)
+@@ -4,35 +4,12 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="BranchesTreeState">
+-    <expand>
+-      <path>
+-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+-      </path>
+-      <path>
+-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+-      </path>
+-      <path>
+-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+-      </path>
+-    </expand>
+-    <select>
+-      <path>
+-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+-        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+-      </path>
+-    </select>
++    <expand />
++    <select />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="4023e5a1-d193-4623-8bca-ab0cfb3b0698" name="Default Changelist" comment="">
++    <list default="true" id="4023e5a1-d193-4623-8bca-ab0cfb3b0698" name="Default Changelist" comment="squash! integrated code from Gibianskys fluid sim project.">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Simulation/Particle.go" beforeDir="false" afterPath="$PROJECT_DIR$/Simulation/Particle.go" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Simulation/Simulation.go" beforeDir="false" afterPath="$PROJECT_DIR$/Simulation/Simulation.go" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/runSimulation.go" beforeDir="false" afterPath="$PROJECT_DIR$/runSimulation.go" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -51,7 +28,7 @@
+       </list>
+     </option>
+   </component>
+-  <component name="GOROOT" path="$PROJECT_DIR$/../../../../Program Files/Go" />
++  <component name="GOROOT" url="file://$USER_HOME$/sdk/go1.16.3" />
+   <component name="Git.Settings">
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+@@ -63,13 +40,6 @@
+     <option name="RESET_MODE" value="HARD" />
+     <option name="ROOT_SYNC" value="SYNC" />
+     <option name="UPDATE_TYPE" value="REBASE" />
+-  </component>
+-  <component name="GoLibraries">
+-    <option name="urls">
+-      <list>
+-        <option value="file://$PROJECT_DIR$" />
+-      </list>
+-    </option>
+   </component>
+   <component name="ProjectId" id="1hHb5viyEno9HVgnXJnzz0sOjeJ" />
+   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+@@ -81,8 +51,11 @@
+   </component>
+   <component name="PropertiesComponent">
+     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
++    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+     <property name="DefaultGoTemplateProperty" value="Go File" />
+     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
++    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
++    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+     <property name="TODO_SCOPE" value="All Places" />
+     <property name="WebServerToolWindowFactoryState" value="false" />
+     <property name="configurable.Global.GOPATH.is.expanded" value="true" />
+@@ -90,7 +63,8 @@
+     <property name="configurable.Project.GOPATH.is.expanded" value="true" />
+     <property name="go.import.settings.migrated" value="true" />
+     <property name="go.sdk.automatically.set" value="true" />
+-    <property name="last_opened_file_path" value="$PROJECT_DIR$/runRender.go" />
++    <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
++    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+     <property name="node.js.detected.package.eslint" value="true" />
+     <property name="node.js.detected.package.tslint" value="true" />
+     <property name="node.js.path.for.package.eslint" value="project" />
+@@ -98,18 +72,20 @@
+     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+     <property name="restartRequiresConfirmation" value="false" />
+-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
++    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
++    <property name="settings.editor.selected.configurable" value="application.passwordSafe" />
+     <property name="settings.editor.splitter.proportion" value="0.22906156" />
+   </component>
+   <component name="RecentsManager">
+     <key name="MoveFile.RECENT_KEYS">
++      <recent name="H:\dev\Go\src\OctaForceEngineGo" />
+       <recent name="H:\dev\Go\src\FluidSim\builds" />
++      <recent name="H:\dev\Go\src\FluidSim" />
+       <recent name="$PROJECT_DIR$" />
+       <recent name="$PROJECT_DIR$/Renderer" />
+-      <recent name="$PROJECT_DIR$/Simulation" />
+-      <recent name="H:\dev\Go\src\FluidSim\FluidSim" />
+     </key>
+     <key name="CopyFile.RECENT_KEYS">
++      <recent name="H:\dev\Go\src\FluidSim\Simulation" />
+       <recent name="$PROJECT_DIR$" />
+     </key>
+   </component>
+@@ -135,7 +111,6 @@
+     <configuration name="render" type="GoApplicationRunConfiguration" factoryName="Go Application">
+       <module name="FluidSim" />
+       <working_directory value="$PROJECT_DIR$" />
+-      <go_parameters value="-i" />
+       <kind value="FILE" />
+       <filePath value="$PROJECT_DIR$/runRender.go" />
+       <directory value="$PROJECT_DIR$" />
+@@ -144,7 +119,6 @@
+     <configuration name="simulate and render" type="GoApplicationRunConfiguration" factoryName="Go Application">
+       <module name="FluidSim" />
+       <working_directory value="$PROJECT_DIR$" />
+-      <go_parameters value="-i" />
+       <kind value="FILE" />
+       <filePath value="$PROJECT_DIR$/runRender.go" />
+       <directory value="$PROJECT_DIR$" />
+@@ -268,7 +242,70 @@
+       <option name="project" value="LOCAL" />
+       <updated>1601133166614</updated>
+     </task>
+-    <option name="localTasksCounter" value="14" />
++    <task id="LOCAL-00014" summary="integrate code by Gibiansky">
++      <created>1601314005735</created>
++      <option name="number" value="00014" />
++      <option name="presentableId" value="LOCAL-00014" />
++      <option name="project" value="LOCAL" />
++      <updated>1601314005735</updated>
++    </task>
++    <task id="LOCAL-00015" summary="integrated code by Gibiansky and now I can compute one Drop of water flying in to an other.">
++      <created>1601321889729</created>
++      <option name="number" value="00015" />
++      <option name="presentableId" value="LOCAL-00015" />
++      <option name="project" value="LOCAL" />
++      <updated>1601321889730</updated>
++    </task>
++    <task id="LOCAL-00016" summary="uint32 to int in parseInt()">
++      <created>1601321927044</created>
++      <option name="number" value="00016" />
++      <option name="presentableId" value="LOCAL-00016" />
++      <option name="project" value="LOCAL" />
++      <updated>1601321927044</updated>
++    </task>
++    <task id="LOCAL-00017" summary="start position fix">
++      <created>1601329636776</created>
++      <option name="number" value="00017" />
++      <option name="presentableId" value="LOCAL-00017" />
++      <option name="project" value="LOCAL" />
++      <updated>1601329636776</updated>
++    </task>
++    <task id="LOCAL-00018" summary="multi threading">
++      <created>1602168528583</created>
++      <option name="number" value="00018" />
++      <option name="presentableId" value="LOCAL-00018" />
++      <option name="project" value="LOCAL" />
++      <updated>1602168528583</updated>
++    </task>
++    <task id="LOCAL-00019" summary="Use 32 bit binary format for data files">
++      <created>1604508443649</created>
++      <option name="number" value="00019" />
++      <option name="presentableId" value="LOCAL-00019" />
++      <option name="project" value="LOCAL" />
++      <updated>1604508443649</updated>
++    </task>
++    <task id="LOCAL-00020" summary="Mesh Intsancing">
++      <created>1604528516093</created>
++      <option name="number" value="00020" />
++      <option name="presentableId" value="LOCAL-00020" />
++      <option name="project" value="LOCAL" />
++      <updated>1604528516093</updated>
++    </task>
++    <task id="LOCAL-00021" summary="Instancing working properly">
++      <created>1604586452601</created>
++      <option name="number" value="00021" />
++      <option name="presentableId" value="LOCAL-00021" />
++      <option name="project" value="LOCAL" />
++      <updated>1604586452601</updated>
++    </task>
++    <task id="LOCAL-00022" summary="bug fix">
++      <created>1604598880645</created>
++      <option name="number" value="00022" />
++      <option name="presentableId" value="LOCAL-00022" />
++      <option name="project" value="LOCAL" />
++      <updated>1604598880645</updated>
++    </task>
++    <option name="localTasksCounter" value="23" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -276,6 +313,7 @@
+   </component>
+   <component name="UnknownFeatures">
+     <option featureType="com.intellij.fileTypeFactory" implementationName="*.obj" />
++    <option featureType="com.intellij.fileTypeFactory" implementationName="*.shader" />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+     <option name="TAB_STATES">
+@@ -293,7 +331,7 @@
+                   <entry key="branch">
+                     <value>
+                       <list>
+-                        <option value="master" />
++                        <option value="origin/BasedOnGibiansky" />
+                       </list>
+                     </value>
+                   </entry>
+@@ -310,19 +348,16 @@
+     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+     <option name="CHECK_NEW_TODO" value="false" />
+     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+-    <MESSAGE value="Mesh Component system" />
+-    <MESSAGE value="Cleaned Up Renderer" />
+-    <MESSAGE value="Moving of Meshes with Transform" />
+-    <MESSAGE value="Rendering Two Meshes" />
+-    <MESSAGE value="Change VBO every frame" />
+-    <MESSAGE value="Doing so commenting, but do not worry. &#10;I only comment the exposed API the rest will still be magic. &#10;You know the drill: Frontend -&gt; magic -&gt; crappy external package calls." />
+-    <MESSAGE value="Commenting some shit. But dont worry only the expoesd API. Rest still be magic." />
+-    <MESSAGE value="No Warnings" />
+-    <MESSAGE value="Input system camera keyboard movement" />
+-    <MESSAGE value="Fixed OBJ loading bug" />
+-    <MESSAGE value="vertexColor and materials" />
+-    <MESSAGE value="Camera Mouse Rotation, Depth test" />
+-    <MESSAGE value="Multi threating safety and profiling" />
++    <ignored-roots>
++      <path value="$PROJECT_DIR$/src/github.com/go-gl/glfw" />
++      <path value="$PROJECT_DIR$/src/github.com/davecgh/go-spew" />
++      <path value="$PROJECT_DIR$/src/github.com/ghostiam/binstruct" />
++      <path value="$PROJECT_DIR$/src/github.com/pkg/errors" />
++      <path value="$PROJECT_DIR$/Doku/dieselfluid" />
++      <path value="$PROJECT_DIR$/Doku/Fluid-Simulation-SPH" />
++      <path value="$PROJECT_DIR$/Doku/SPH-3D-Fluid-Simulation" />
++      <path value="$PROJECT_DIR$/Doku/SPH-Tutorial" />
++    </ignored-roots>
+     <MESSAGE value="FPS, UPS Bug Fixes" />
+     <MESSAGE value="Simple Newton Gravity Simulation" />
+     <MESSAGE value="Changing Frames with 1 and 2" />
+@@ -335,175 +370,44 @@
+     <MESSAGE value="new Kernel functions I kinda understand them" />
+     <MESSAGE value="I think Pressure is Working" />
+     <MESSAGE value="Bla Curvature Force geht zawr nich aber hier für die Ewigkeit" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Bla Curvature Force geht zawr nich aber hier für die Ewigkeit" />
++    <MESSAGE value="integrate code by Gibiansky" />
++    <MESSAGE value="integrated code by Gibiansky and now I can compute one Drop of water flying in to an other." />
++    <MESSAGE value="uint32 to int in parseInt()" />
++    <MESSAGE value="start position fix" />
++    <MESSAGE value="multi threading" />
++    <MESSAGE value="Use 32 bit binary format for data files" />
++    <MESSAGE value="Mesh Intsancing" />
++    <MESSAGE value="Instancing working properly" />
++    <MESSAGE value="bug fix" />
++    <MESSAGE value="using bin files" />
++    <MESSAGE value="backup" />
++    <MESSAGE value="Pefecnt ball" />
++    <MESSAGE value="changes" />
++    <option name="LAST_COMMIT_MESSAGE" value="changes" />
+     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+   </component>
+-  <component name="WindowStateProjectService">
+-    <state x="552" y="178" key="#Deployment" timestamp="1599926172704">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state x="552" y="178" key="#Deployment/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599926172704" />
+-    <state x="752" y="178" key="#GOPATH" timestamp="1600533967915">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state x="752" y="178" key="#GOPATH/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600533967915" />
+-    <state x="752" y="451" key="#GOROOT" timestamp="1600533930757">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state x="752" y="451" key="#GOROOT/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600533930757" />
+-    <state x="757" y="309" key="#Web_Browsers" timestamp="1600556516372">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state x="757" y="309" key="#Web_Browsers/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600556516372" />
+-    <state x="414" y="175" width="1092" height="764" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601045909535">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state x="295" y="80" width="777" height="648" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1600771596850" />
+-    <state x="414" y="175" width="1092" height="764" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601045909535" />
+-    <state x="721" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600699803281">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state x="721" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600699803281" />
+-    <state x="871" y="273" width="841" height="494" key="#xdebugger.XInspectDialog" timestamp="1599934417857">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state x="871" y="273" width="841" height="494" key="#xdebugger.XInspectDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599934417857" />
+-    <state x="537" y="86" key="CommitChangelistDialog2" timestamp="1599926035236">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state x="537" y="86" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599926035236" />
+-    <state width="737" height="466" key="DebuggerActiveHint" timestamp="1601131753943">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state width="737" height="466" key="DebuggerActiveHint/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601131753943" />
+-    <state width="701" height="466" key="DebuggerActiveHint/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599774039565" />
+-    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1600094150099">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600094150099" />
+-    <state x="827" y="295" key="EnvironmentVariablesDialog" timestamp="1600870768969">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state x="827" y="295" key="EnvironmentVariablesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600870768969" />
+-    <state x="1267" y="328" width="424" height="479" key="FileChooserDialogImpl" timestamp="1600870934479">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state x="901" y="230" width="424" height="479" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1600763451310" />
+-    <state x="1267" y="328" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600870934479" />
+-    <state width="1877" height="152" key="GridCell.Tab.0.bottom" timestamp="1601136747842">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state width="1314" height="145" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1600772941568" />
+-    <state width="1877" height="152" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601136747842" />
+-    <state width="1877" height="217" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600702949266" />
+-    <state width="1877" height="152" key="GridCell.Tab.0.center" timestamp="1601136747841">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state width="1314" height="145" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1600772941567" />
+-    <state width="1877" height="152" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601136747841" />
+-    <state width="1877" height="217" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600702949266" />
+-    <state width="1877" height="152" key="GridCell.Tab.0.left" timestamp="1601136747841">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state width="1314" height="145" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1600772941567" />
+-    <state width="1877" height="152" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601136747841" />
+-    <state width="1877" height="217" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600702949266" />
+-    <state width="1877" height="152" key="GridCell.Tab.0.right" timestamp="1601136747841">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state width="1314" height="145" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1600772941567" />
+-    <state width="1877" height="152" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601136747841" />
+-    <state width="1877" height="217" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1600702949266" />
+-    <state width="1877" height="309" key="GridCell.Tab.1.bottom" timestamp="1601136735717">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state width="1314" height="271" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1600771602354" />
+-    <state width="1877" height="309" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601136735717" />
+-    <state width="1877" height="97" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599774423139" />
+-    <state width="1877" height="309" key="GridCell.Tab.1.center" timestamp="1601136735717">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state width="1314" height="271" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1600771602354" />
+-    <state width="1877" height="309" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601136735717" />
+-    <state width="1877" height="97" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599774423139" />
+-    <state width="1877" height="309" key="GridCell.Tab.1.left" timestamp="1601136735717">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state width="1314" height="271" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1600771602353" />
+-    <state width="1877" height="309" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601136735717" />
+-    <state width="1877" height="97" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599774423139" />
+-    <state width="1877" height="309" key="GridCell.Tab.1.right" timestamp="1601136735717">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state width="1314" height="271" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1600771602354" />
+-    <state width="1877" height="309" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601136735717" />
+-    <state width="1877" height="97" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599774423139" />
+-    <state x="598" y="281" key="MultipleFileMergeDialog" timestamp="1601133228650">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state x="598" y="281" key="MultipleFileMergeDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601133228650" />
+-    <state x="811" y="222" key="RollbackChangesDialog" timestamp="1599939989104">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state x="811" y="222" key="RollbackChangesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599939989104" />
+-    <state x="461" y="165" key="SettingsEditor" timestamp="1601058057188">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state x="328" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1600715640662" />
+-    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601058057188" />
+-    <state x="807" y="435" key="VCS.ChangelistChooser" timestamp="1599926039217">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state x="807" y="435" key="VCS.ChangelistChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599926039217" />
+-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1601133240539">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601133240539" />
+-    <state width="968" height="528" key="XDebugger.FullValuePopup" timestamp="1599934411083">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state width="968" height="528" key="XDebugger.FullValuePopup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599934411083" />
+-    <state x="739" y="354" key="com.goide.refactor.extractInterface.GoExtractInterfaceDialog" timestamp="1600868452366">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state x="739" y="354" key="com.goide.refactor.extractInterface.GoExtractInterfaceDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600868452366" />
+-    <state x="734" y="244" key="com.goide.refactor.move.GoMoveDeclarationDialog" timestamp="1600980439675">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state x="734" y="244" key="com.goide.refactor.move.GoMoveDeclarationDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600980439675" />
+-    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1599776970575">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599776970575" />
+-    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600975704775">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600975704775" />
+-    <state x="685" y="149" width="585" height="801" key="find.popup" timestamp="1600707035817">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state x="685" y="149" width="585" height="801" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1600707035817" />
+-    <state x="803" y="281" key="refactoring.ChangeSignatureDialog" timestamp="1599944208527">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state x="803" y="281" key="refactoring.ChangeSignatureDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599944208527" />
+-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1601120376923">
+-      <screen x="0" y="0" width="1920" height="1040" />
+-    </state>
+-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1601120376923" />
+-  </component>
+   <component name="XDebuggerManager">
+     <breakpoint-manager>
+       <breakpoints>
+         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+-          <url>file://$PROJECT_DIR$/Simulation/Particle.go</url>
+-          <line>92</line>
+-          <option name="timeStamp" value="28" />
++          <url>file://$PROJECT_DIR$/Simulation/Simulation.go</url>
++          <line>89</line>
++          <option name="timeStamp" value="4" />
++        </line-breakpoint>
++        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
++          <url>file://$PROJECT_DIR$/Simulation/Simulation.go</url>
++          <line>82</line>
++          <option name="timeStamp" value="5" />
+         </line-breakpoint>
+       </breakpoints>
+       <default-breakpoints>
+         <breakpoint type="DlvErrorBreakpoint" />
+       </default-breakpoints>
+     </breakpoint-manager>
++    <watches-manager>
++      <configuration name="GoApplicationRunConfiguration">
++        <watch expression="particles" />
++      </configuration>
++    </watches-manager>
+   </component>
+ </project>
+\ No newline at end of file
