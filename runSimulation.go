@@ -8,7 +8,7 @@ import (
 
 func main() {
 
-	frames := 1000
+	frames := 2000
 	_, b, _, _ := runtime.Caller(0)
 	absPath := filepath.Dir(b)
 

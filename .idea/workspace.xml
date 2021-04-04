@@ -8,49 +8,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4023e5a1-d193-4623-8bca-ab0cfb3b0698" name="Default Changelist" comment="squash! integrated code from Gibianskys fluid sim project.">
-      <change afterPath="$PROJECT_DIR$/Doku/10.1.1.110.5509.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/FluidSim.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FluidSim.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="74d8532e-1713-4e95-a0b6-8a03dc86e275" name="Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Renderer/Renderer.go" beforeDir="false" afterPath="$PROJECT_DIR$/Renderer/Renderer.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Simulation/Particle.go" beforeDir="false" afterPath="$PROJECT_DIR$/Simulation/Particle.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Simulation/Simulation.go" beforeDir="false" afterPath="$PROJECT_DIR$/Simulation/Simulation.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/builds/simulationData.bin" beforeDir="false" afterPath="$PROJECT_DIR$/builds/simulationData.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgui.ini" beforeDir="false" afterPath="$PROJECT_DIR$/imgui.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mesh/Cube.mtl" beforeDir="false" afterPath="$PROJECT_DIR$/mesh/Cube.mtl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mesh/Cube.obj" beforeDir="false" afterPath="$PROJECT_DIR$/mesh/Cube.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mesh/Sphere.mtl" beforeDir="false" afterPath="$PROJECT_DIR$/mesh/Sphere.mtl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mesh/Sphere.obj" beforeDir="false" afterPath="$PROJECT_DIR$/mesh/Sphere.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/runSimulation.go" beforeDir="false" afterPath="$PROJECT_DIR$/runSimulation.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/.idea/OctaForce.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/.idea/OctaForce.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/dispatcher.go" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/dispatcher.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/glfw.go" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/glfw.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/imgui.go" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/imgui.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/material.go" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/material.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/mesh.go" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/mesh.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/meshInstant.go" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/meshInstant.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/render.go" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/render.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/shader.go" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/shader.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/shader/fragmentShader.shader" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/shader/fragmentShader.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/shader/guiFragmentShader.shader" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/shader/guiFragmentShader.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/shader/guiVertexShader.shader" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/shader/guiVertexShader.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/shader/vertexShader.shader" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/shader/vertexShader.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/shader/vertexShaderInstancing.shader" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/shader/vertexShaderInstancing.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/state.go" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/state.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/task.go" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/task.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/test/imgui.ini" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/test/imgui.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/test/main_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/test/main_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/test/mesh/LowPolySphere.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/test/mesh/LowPolySphere.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/utility.go" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/utility.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../OctaForceEngineGo/openGL.go" beforeDir="false" afterPath="$PROJECT_DIR$/../OctaForceEngineGo/openGL.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +45,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
     <option name="ROOT_SYNC" value="SYNC" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="1hHb5viyEno9HVgnXJnzz0sOjeJ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -114,7 +78,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="application.passwordSafe" />
     <property name="settings.editor.splitter.proportion" value="0.22906156" />
   </component>
   <component name="RecentsManager">
@@ -372,7 +336,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/BasedOnGibiansky" />
+                        <option value="master" />
                       </list>
                     </value>
                   </entry>
@@ -399,8 +363,6 @@
       <path value="$PROJECT_DIR$/Doku/SPH-3D-Fluid-Simulation" />
       <path value="$PROJECT_DIR$/Doku/SPH-Tutorial" />
     </ignored-roots>
-    <MESSAGE value="Camera Mouse Rotation, Depth test" />
-    <MESSAGE value="Multi threating safety and profiling" />
     <MESSAGE value="FPS, UPS Bug Fixes" />
     <MESSAGE value="Simple Newton Gravity Simulation" />
     <MESSAGE value="Changing Frames with 1 and 2" />
@@ -424,23 +386,13 @@
     <MESSAGE value="bug fix" />
     <MESSAGE value="using bin files" />
     <MESSAGE value="backup" />
-    <option name="LAST_COMMIT_MESSAGE" value="backup" />
+    <MESSAGE value="Pefecnt ball" />
+    <MESSAGE value="changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/Simulation/Simulation.go</url>
-          <line>89</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/Simulation/Simulation.go</url>
-          <line>82</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint type="DlvErrorBreakpoint" />
       </default-breakpoints>

@@ -23,11 +23,13 @@ const (
 	dt = 1.0 / 25 * s
 
 	particleRadius = 1.0 * cm
-	spacing        = particleRadius * 2.0
+	spacing        = particleRadius * 4.0
 
-	Ke          = 100000 * dt
-	Kg          = 0.1 * dt
-	maxVelocity = 10 * cm
+	springNeigborMaxDist = spacing * 2
+	springNeigborMinDist = spacing * 1.1
+	springRestingLenght  = spacing
+	springStiffness      = 0.1
+	springDampingFactor  = 0.001
 )
 
 var (
@@ -42,12 +44,14 @@ func SetUpSimulation(_frameCount int, absPath string) {
 
 	particles = make([]*Particle, 0)
 
-	createBlockofParticles(mgl64.Vec3{15 * cm, 5 * cm, 10 * cm}, mgl64.Vec3{}, mgl64.Vec3{})
+	createBlockofParticles(mgl64.Vec3{30 * cm, 30 * cm, 30 * cm}, mgl64.Vec3{}, mgl64.Vec3{0, 0, 0})
+
+	createBlockofParticles(mgl64.Vec3{10 * cm, 10 * cm, 10 * cm}, mgl64.Vec3{50 * cm, 0, 0}, mgl64.Vec3{-10 * cm, 0, 0})
 
 	createFile(particleCount, frameCount, absPath)
 
 	for _, particle := range particles {
-		particle.calcOutside()
+		particle.calcSpringNeigbors()
 	}
 
 	for _, particle := range particles {
@@ -60,14 +64,16 @@ func SetUpSimulation(_frameCount int, absPath string) {
 }
 
 func createBlockofParticles(size mgl64.Vec3, position mgl64.Vec3, velocity mgl64.Vec3) {
-	for x := 0.0; x < size[0]; x += spacing {
-		for y := 0.0; y < size[1]; y += spacing {
-			for z := 0.0; z < size[2]; z += spacing {
+	for x := 0.0; x < size[0]; x += spacing * 0.8 {
+		for y := 0.0; y < size[1]; y += spacing * 0.8 {
+			for z := 0.0; z < size[2]; z += spacing * 0.8 {
 
 				fmt.Printf("Creating particle %d. \r", particleCount)
 
 				particle := Particle{
 					position: mgl64.Vec3{x + position[0] - (size[0] / 2), y + position[1] - (size[0] / 2), z + position[2] - (size[0] / 2)},
+					velocity: mgl64.Vec3{velocity[0], velocity[1], velocity[2]},
+					mass:     1,
 				}
 
 				particles = append(particles, &particle)
@@ -82,8 +88,9 @@ func UpdateSimulation(frame int) {
 
 	fmt.Printf("Calculating Frame %d of %d. \r", frame, frameCount)
 
-	runInParallel((*Particle).calcOutside)
-	runInParallel((*Particle).calcAcceleration)
+	runInParallel((*Particle).calcSpringNeigbors)
+	runInParallel((*Particle).calcForce)
+	runInParallel((*Particle).calcVelocity)
 	runInParallel((*Particle).calcPosition)
 
 	// Writing Particle Pos to file
